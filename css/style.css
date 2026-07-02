@@ -4,7 +4,7 @@
    Conçue mobile-first : les styles de base visent les téléphones,
    puis les media queries (min-width) adaptent tablette et ordinateur.
 
-   ✏️ Pour changer les couleurs du site, modifiez simplement les
+   Pour changer les couleurs du site, modifiez simplement les
    variables ci-dessous dans :root — tout le site suivra.
    ================================================================== */
 
@@ -155,14 +155,6 @@ ul { list-style: none; margin: 0; padding: 0; }
   border-bottom: 2px dashed var(--beige-fonce);
   position: relative;
 }
-.fil::after {
-  content: "🧶";
-  position: absolute;
-  right: -1.6em;
-  top: -0.75em;
-  font-size: 0.9rem;
-}
-
 /* ==================================================================
    BORDURES FESTONNÉES — la signature du site
    Des demi-cercles répétés, comme une lisière de crochet, pour
@@ -351,11 +343,6 @@ ul { list-style: none; margin: 0; padding: 0; }
 .hero {
   padding: 4rem 0 4.5rem;
   text-align: center;
-}
-
-.hero-pelote {
-  font-size: 2rem;
-  margin: 0 0 0.25rem;
 }
 
 .hero h1 {

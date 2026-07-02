@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ✏️ À PERSONNALISER : le titre et la description qui apparaissent sur Google -->
+  <!-- À PERSONNALISER : le titre et la description qui apparaissent sur Google -->
   <title>L'Atelier Tout Doux · Des peluches faites main à adopter</title>
   <meta name="description" content="L'Atelier Tout Doux — des peluches en crochet faites main par Marylou, à adopter ou à commander sur mesure. Douceur garantie.">
 
-  <!-- Petite icône d'onglet (une pelote de laine) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧶</text></svg>">
+  <!-- Petite icône d'onglet -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23FBF7F0'/%3E%3Cpath d='M24 55c10-20 29-30 52-28' fill='none' stroke='%239C5F45' stroke-width='9' stroke-linecap='round'/%3E%3Cpath d='M25 58c14 14 35 18 56 9' fill='none' stroke='%235F4636' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
 
   <!-- Polices : Caveat (titres manuscrits) + Nunito (texte courant) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
        ================================================================ -->
   <header class="entete">
     <nav class="entete-nav" aria-label="Navigation principale">
-      <a class="logo" href="#accueil">🧶 L'Atelier Tout Doux</a>
+      <a class="logo" href="#accueil">L'Atelier Tout Doux</a>
 
       <button class="burger" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Ouvrir le menu">
         <span class="burger-trait"></span>
@@ -51,11 +51,10 @@
 
     <!-- ================================================================
          ACCUEIL (HERO)
-         ✏️ À PERSONNALISER : le petit mot d'accueil de Marylou ci-dessous
+         À PERSONNALISER : le petit mot d'accueil de Marylou ci-dessous
          ================================================================ -->
     <section class="hero" id="accueil">
       <div class="conteneur hero-contenu">
-        <p class="hero-pelote" aria-hidden="true">🧶</p>
         <h1>L'Atelier Tout Doux</h1>
         <p class="hero-slogan">Des peluches faites main à adopter</p>
 
@@ -75,9 +74,7 @@
 
     <!-- ================================================================
          BOUTIQUE
-         Les cartes sont générées automatiquement depuis le tableau
-         `products` qui se trouve en haut de js/main.js.
-         ✏️ Pour modifier les peluches : ouvrez js/main.js
+         Les cartes sont générées automatiquement depuis js/catalogue.js.
          ================================================================ -->
     <section class="section section-beige" id="boutique">
       <div class="conteneur">
@@ -134,7 +131,7 @@
 
     <!-- ================================================================
          SUR MESURE
-         ✏️ À PERSONNALISER : le texte ci-dessous si besoin
+         À PERSONNALISER : le texte ci-dessous si besoin
          ================================================================ -->
     <section class="section" id="sur-mesure">
       <div class="conteneur conteneur-etroit">
@@ -168,10 +165,10 @@
         </header>
 
         <div class="carnet carnet-penche reveal">
-          <!-- ✏️ À PERSONNALISER : remplacez ce paragraphe par la vraie histoire de Marylou -->
+          <!-- À PERSONNALISER : remplacez ce paragraphe par la vraie histoire de Marylou -->
           <p>Cette partie sera bientôt personnalisée avec l'histoire de Marylou,
           son univers et la naissance de L'Atelier Tout Doux.</p>
-          <p class="carnet-note" aria-hidden="true">🤍 à suivre…</p>
+          <p class="carnet-note" aria-hidden="true">à suivre…</p>
         </div>
       </div>
     </section>
@@ -180,7 +177,7 @@
 
     <!-- ================================================================
          FAQ (questions fréquentes)
-         ✏️ À PERSONNALISER : vous pouvez ajuster les réponses ci-dessous
+         À PERSONNALISER : vous pouvez ajuster les réponses ci-dessous
          ================================================================ -->
     <section class="section section-beige" id="faq">
       <div class="conteneur conteneur-etroit">
@@ -239,7 +236,7 @@
 
     <!-- ================================================================
          CONTACT
-         Les liens Instagram et Vinted se règlent en haut de js/main.js
+         Les liens Instagram et Vinted se règlent dans js/catalogue.js
          ================================================================ -->
     <section class="section" id="contact">
       <div class="conteneur conteneur-etroit centre">
@@ -267,10 +264,10 @@
 
   <!-- ================================================================
        PIED DE PAGE
-       ✏️ À PERSONNALISER : le petit mot doux si vous le souhaitez
+       À PERSONNALISER : le petit mot doux si vous le souhaitez
        ================================================================ -->
   <footer class="pied">
-    <p class="pied-nom">🧶 L'Atelier Tout Doux</p>
+    <p class="pied-nom">L'Atelier Tout Doux</p>
     <p class="pied-mot">Fait main, point par point, avec beaucoup d'amour.</p>
     <p class="pied-annee">© <span id="annee">2026</span> · Marylou</p>
   </footer>
@@ -289,6 +286,7 @@
     </div>
   </div>
 
+  <script src="js/catalogue.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
