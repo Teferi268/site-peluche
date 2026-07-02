@@ -343,6 +343,14 @@ ul { list-style: none; margin: 0; padding: 0; }
 .hero {
   padding: 4rem 0 4.5rem;
   text-align: center;
+  /* Fond « papier crochet » : le motif crème, adouci par un voile
+     pour que le texte reste bien lisible par-dessus. */
+  background-image:
+    linear-gradient(to bottom, rgba(251, 247, 240, 0.60), rgba(251, 247, 240, 0.82)),
+    url("../images/fond%20d%27%C3%A9cran%20accueil.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero h1 {

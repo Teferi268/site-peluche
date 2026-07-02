@@ -35,14 +35,33 @@
     });
   }
 
+  // Renvoie le lien Vinted de la peluche s'il est valable, sinon la
+  // boutique Vinted générale. Couvre les cas où le lien est vide,
+  // mal recopié (https:// oublié) ou n'est pas une adresse Vinted.
+  function lienVinted(product) {
+    const brut = (product.vintedUrl || "").trim();
+    if (brut === "") return settings.vintedShopUrl;
+
+    // On complète l'adresse si le https:// a été oublié.
+    let url = brut;
+    if (!/^https?:\/\//i.test(url)) {
+      url = "https://" + url.replace(/^\/+/, "");
+    }
+
+    // Le lien doit bien mener vers Vinted, sinon retour à la boutique.
+    try {
+      const hote = new URL(url).hostname.toLowerCase();
+      if (!hote.includes("vinted.")) return settings.vintedShopUrl;
+    } catch (e) {
+      return settings.vintedShopUrl;
+    }
+
+    return url;
+  }
+
   function actionProduit(product) {
     if (product.statut === "disponible") {
-      return {
-        label: "Je l'adopte !",
-        url: product.vintedUrl && product.vintedUrl.trim() !== ""
-          ? product.vintedUrl
-          : settings.vintedShopUrl
-      };
+      return { label: "Je l'adopte !", url: lienVinted(product) };
     }
 
     if (product.statut === "commande") {
