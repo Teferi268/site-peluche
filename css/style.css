@@ -1,0 +1,974 @@
+/* ==================================================================
+   L'ATELIER TOUT DOUX — Feuille de style
+   ------------------------------------------------------------------
+   Conçue mobile-first : les styles de base visent les téléphones,
+   puis les media queries (min-width) adaptent tablette et ordinateur.
+
+   ✏️ Pour changer les couleurs du site, modifiez simplement les
+   variables ci-dessous dans :root — tout le site suivra.
+   ================================================================== */
+
+:root {
+  /* ----- Palette : tons naturels, chauds, jamais saturés ----- */
+  --creme:            #FBF7F0;   /* fond principal, blanc cassé chaud   */
+  --beige:            #F2E9DC;   /* fond des sections alternées         */
+  --beige-fonce:      #E0CFB8;   /* bordures, pointillés « cousus »     */
+  --kraft:            #EBDCC3;   /* étiquettes de prix, papier kraft    */
+  --blanc-casse:      #FFFDF9;   /* fond des cartes                     */
+  --brun:             #5F4636;   /* texte principal, marron doux        */
+  --brun-doux:        #86684F;   /* texte secondaire                    */
+  --terracotta:       #9C5F45;   /* boutons et accents, terre cuite     */
+  --terracotta-fonce: #7F4B36;   /* boutons au survol                   */
+
+  /* ----- Couleurs des badges de statut ----- */
+  --dispo-fond:  #E7ECDB;  --dispo-texte:  #52603D;  --dispo-bord:  #C0CDA3;
+  --cmd-fond:    #F6E8C9;  --cmd-texte:    #6E531D;  --cmd-bord:    #E2C488;
+  --adopte-fond: #ECE4DA;  --adopte-texte: #77644F;  --adopte-bord: #D3C3AE;
+
+  /* ----- Ombres chaudes (jamais grises ni bleues) ----- */
+  --ombre:       0 6px 22px rgba(95, 70, 54, 0.10);
+  --ombre-haute: 0 12px 30px rgba(95, 70, 54, 0.16);
+
+  /* ----- Formes et rythme ----- */
+  --rayon: 22px;                 /* arrondi généreux des cartes  */
+  --transition: 0.35s ease;      /* transitions lentes et douces */
+
+  /* ----- Typographies ----- */
+  --police-titre: "Caveat", "Segoe Script", cursive;
+  --police-texte: "Nunito", "Trebuchet MS", sans-serif;
+}
+
+/* ==================================================================
+   BASE
+   ================================================================== */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--police-texte);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--brun);
+  background-color: var(--creme);
+  /* Léger grain « papier » à peine visible, pour un rendu artisanal */
+  background-image: radial-gradient(rgba(95, 70, 54, 0.05) 1px, transparent 1.3px);
+  background-size: 26px 26px;
+  overflow-wrap: break-word;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3 {
+  font-family: var(--police-titre);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 0.4em;
+}
+
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--terracotta); }
+
+ul { list-style: none; margin: 0; padding: 0; }
+
+::selection {
+  background: var(--kraft);
+  color: var(--brun);
+}
+
+/* Focus clavier bien visible, aux couleurs du site */
+:focus-visible {
+  outline: 3px solid var(--terracotta);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Lien d'évitement (accessibilité clavier) */
+.lien-evitement {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--brun);
+  color: var(--creme);
+  padding: 0.6em 1.2em;
+  border-radius: 0 0 12px 0;
+  z-index: 200;
+}
+.lien-evitement:focus { left: 0; }
+
+/* ==================================================================
+   OUTILS / UTILITAIRES
+   ================================================================== */
+
+.conteneur {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.conteneur-etroit { max-width: 720px; }
+
+.centre { text-align: center; }
+
+.section {
+  padding: 3.5rem 0;
+  scroll-margin-top: 5rem; /* compense l'en-tête collant lors des ancres */
+}
+
+.section-beige {
+  background-color: var(--beige);
+}
+
+/* En-tête de section : titre manuscrit + petit fil cousu */
+.section-tete {
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
+.section-tete h2 {
+  font-size: clamp(2.2rem, 6vw, 2.9rem);
+  color: var(--brun);
+}
+
+.section-intro {
+  color: var(--brun-doux);
+  max-width: 34em;
+  margin: 0.75rem auto 0;
+}
+
+/* Le « fil » : une petite ligne en pointillés, comme une couture */
+.fil {
+  width: 90px;
+  margin: 0.35rem auto 0;
+  border-bottom: 2px dashed var(--beige-fonce);
+  position: relative;
+}
+.fil::after {
+  content: "🧶";
+  position: absolute;
+  right: -1.6em;
+  top: -0.75em;
+  font-size: 0.9rem;
+}
+
+/* ==================================================================
+   BORDURES FESTONNÉES — la signature du site
+   Des demi-cercles répétés, comme une lisière de crochet, pour
+   passer d'une section crème à une section beige (et inversement).
+   ================================================================== */
+
+.feston {
+  height: 18px;
+  background-repeat: repeat-x;
+  background-size: 28px 19px;
+}
+
+/* du crème (en haut) vers le beige (en bas) */
+.feston-vers-beige {
+  background-color: var(--creme);
+  background-image: radial-gradient(circle at 14px 20px, var(--beige) 13px, transparent 13.6px);
+}
+
+/* du beige (en haut) vers le crème (en bas) */
+.feston-vers-creme {
+  background-color: var(--beige);
+  background-image: radial-gradient(circle at 14px 20px, var(--creme) 13px, transparent 13.6px);
+}
+
+/* ==================================================================
+   BOUTONS
+   ================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55em;
+  font-family: var(--police-texte);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  padding: 0.75em 1.6em;
+  cursor: pointer;
+  transition: background-color var(--transition),
+              color var(--transition),
+              border-color var(--transition),
+              transform var(--transition),
+              box-shadow var(--transition);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+}
+
+.btn-plein {
+  background-color: var(--terracotta);
+  color: var(--blanc-casse);
+}
+.btn-plein:hover,
+.btn-plein:focus-visible {
+  background-color: var(--terracotta-fonce);
+  box-shadow: var(--ombre);
+}
+
+.btn-contour {
+  background-color: transparent;
+  border-color: var(--brun-doux);
+  color: var(--brun);
+}
+.btn-contour:hover,
+.btn-contour:focus-visible {
+  background-color: var(--blanc-casse);
+  border-color: var(--brun);
+  box-shadow: var(--ombre);
+}
+
+.btn-grand {
+  font-size: 1.05rem;
+  padding: 0.85em 2em;
+}
+
+.icone {
+  width: 1.2em;
+  height: 1.2em;
+  flex-shrink: 0;
+}
+
+/* ==================================================================
+   EN-TÊTE / NAVIGATION
+   ================================================================== */
+
+.entete {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--creme);
+  border-bottom: 1px solid var(--beige-fonce);
+}
+
+.entete-nav {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0.65rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  font-family: var(--police-titre);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--brun);
+  text-decoration: none;
+  line-height: 1;
+}
+
+/* --- Bouton burger (mobile) --- */
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burger-trait {
+  display: block;
+  height: 2.5px;
+  width: 100%;
+  border-radius: 3px;
+  background-color: var(--brun);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* Le burger devient une croix quand le menu est ouvert */
+.burger[aria-expanded="true"] .burger-trait:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.burger[aria-expanded="true"] .burger-trait:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] .burger-trait:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+/* --- Menu déroulant (mobile) --- */
+.menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--creme);
+  border-bottom: 1px solid var(--beige-fonce);
+  box-shadow: var(--ombre);
+  padding: 0.5rem 0 1rem;
+  flex-direction: column;
+  text-align: center;
+}
+
+.menu.ouvert {
+  display: flex;
+  animation: fondu 0.3s ease both;
+}
+
+.menu a {
+  display: block;
+  padding: 0.7em 1em;
+  color: var(--brun);
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  background-color: var(--beige);
+  color: var(--terracotta-fonce);
+}
+
+/* ==================================================================
+   ACCUEIL (HERO)
+   ================================================================== */
+
+.hero {
+  padding: 4rem 0 4.5rem;
+  text-align: center;
+}
+
+.hero-pelote {
+  font-size: 2rem;
+  margin: 0 0 0.25rem;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 11vw, 4.6rem);
+  margin-bottom: 0.1em;
+}
+
+.hero-slogan {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--brun-doux);
+  margin-bottom: 2rem;
+}
+
+/* Le petit mot d'accueil, présenté comme une étiquette cousue */
+.hero-mot {
+  max-width: 34em;
+  margin: 0 auto 2.25rem;
+  background-color: var(--blanc-casse);
+  border: 2px dashed var(--beige-fonce);
+  border-radius: var(--rayon);
+  padding: 1.5rem 1.5rem 1.1rem;
+  box-shadow: var(--ombre);
+  transform: rotate(-0.6deg);
+}
+
+.hero-signature {
+  font-family: var(--police-titre);
+  font-size: 1.5rem;
+  color: var(--terracotta);
+  text-align: right;
+  margin: 0.35rem 0 0;
+}
+
+/* ==================================================================
+   FILTRES DE LA BOUTIQUE
+   ================================================================== */
+
+.filtres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.filtre {
+  font-family: var(--police-texte);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--brun-doux);
+  background-color: var(--blanc-casse);
+  border: 2px solid var(--beige-fonce);
+  border-radius: 999px;
+  padding: 0.5em 1.3em;
+  cursor: pointer;
+  transition: background-color var(--transition),
+              color var(--transition),
+              border-color var(--transition);
+}
+
+.filtre:hover { border-color: var(--brun-doux); }
+
+.filtre.actif {
+  background-color: var(--brun);
+  border-color: var(--brun);
+  color: var(--creme);
+}
+
+/* ==================================================================
+   GRILLE ET CARTES PRODUITS
+   ================================================================== */
+
+.grille {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.grille-vide {
+  text-align: center;
+  color: var(--brun-doux);
+  background-color: var(--blanc-casse);
+  border: 2px dashed var(--beige-fonce);
+  border-radius: var(--rayon);
+  padding: 2rem 1.5rem;
+  max-width: 34em;
+  margin: 0 auto;
+}
+
+.carte {
+  background-color: var(--blanc-casse);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.carte:hover,
+.carte:focus-within {
+  transform: translateY(-5px);
+  box-shadow: var(--ombre-haute);
+}
+
+/* Toute la zone photo + texte est un vrai bouton : clic ou clavier
+   (Entrée) ouvre la fiche détaillée */
+.carte-zone {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.carte-photo {
+  display: block;
+  position: relative;
+}
+
+.carte-photo img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.carte-corps {
+  display: block;
+  padding: 1.1rem 1.2rem 0.4rem;
+}
+
+.carte-entete {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.carte-nom {
+  font-family: var(--police-titre);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.carte-taille {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--brun-doux);
+  margin-top: 0.35rem;
+}
+
+.carte-description {
+  display: block;
+  font-size: 0.95rem;
+  margin-top: 0.6rem;
+  color: var(--brun);
+}
+
+.carte-pied {
+  padding: 0.9rem 1.2rem 1.3rem;
+  margin-top: auto;
+}
+
+.carte-pied .btn {
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+/* --- Étiquette de prix, façon petite étiquette kraft trouée --- */
+.etiquette-prix {
+  flex-shrink: 0;
+  position: relative;
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--brun);
+  background-color: var(--kraft);
+  border-radius: 8px;
+  padding: 0.2em 0.7em 0.2em 1.1em;
+  transform: rotate(2deg);
+}
+.etiquette-prix::before {
+  /* le petit trou de l'étiquette */
+  content: "";
+  position: absolute;
+  left: 0.35em;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--blanc-casse);
+  box-shadow: inset 0 0 0 1.5px var(--brun-doux);
+}
+
+/* --- Badges de statut, façon étiquettes cousues sur la photo --- */
+.badge {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  padding: 0.25em 0.9em;
+  border-radius: 999px;
+  border: 1.5px dashed;
+  transform: rotate(-2deg);
+}
+
+.badge-disponible { background-color: var(--dispo-fond);  color: var(--dispo-texte);  border-color: var(--dispo-bord); }
+.badge-commande   { background-color: var(--cmd-fond);    color: var(--cmd-texte);    border-color: var(--cmd-bord); }
+.badge-adoptee    { background-color: var(--adopte-fond); color: var(--adopte-texte); border-color: var(--adopte-bord); }
+
+/* Badge affiché dans la modale (non positionné sur une photo) */
+.badge-fiche {
+  position: static;
+  display: inline-block;
+  transform: rotate(-1deg);
+}
+
+/* --- Cartes « déjà adoptées » : plus discrètes, désaturées --- */
+.carte-adoptee {
+  filter: saturate(0.7);
+  background-color: var(--creme);
+}
+
+.carte-adoptee .carte-photo img {
+  opacity: 0.85;
+}
+
+.section-adoptees {
+  padding-top: 0;
+}
+
+.section-adoptees .section-tete {
+  border-top: 2px dashed var(--beige-fonce);
+  padding-top: 3rem;
+}
+
+/* ==================================================================
+   CARNET (blocs de texte Sur mesure / À propos)
+   ================================================================== */
+
+.carnet {
+  background-color: var(--blanc-casse);
+  border: 2px dashed var(--beige-fonce);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+}
+
+.carnet .btn { margin-top: 0.5rem; }
+
+.carnet-penche { transform: rotate(0.5deg); }
+
+.carnet-note {
+  font-family: var(--police-titre);
+  font-size: 1.4rem;
+  color: var(--brun-doux);
+  margin-top: 0.75rem;
+}
+
+/* ==================================================================
+   FAQ (accordéon)
+   ================================================================== */
+
+.faq {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.faq-item {
+  background-color: var(--blanc-casse);
+  border-radius: 18px;
+  box-shadow: var(--ombre);
+  overflow: hidden;
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 800;
+  padding: 1rem 3rem 1rem 1.25rem;
+  position: relative;
+  transition: color var(--transition);
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+/* Le petit « + » qui pivote en croix quand la question est ouverte */
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--terracotta);
+  transition: transform var(--transition);
+}
+
+.faq-item[open] summary::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.faq-item[open] summary { color: var(--terracotta-fonce); }
+
+.faq-item p {
+  padding: 0 1.25rem 1.2rem;
+  margin: 0;
+  color: var(--brun-doux);
+}
+
+/* ==================================================================
+   CONTACT
+   ================================================================== */
+
+.contact-boutons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.contact-boutons .btn {
+  width: 100%;
+  max-width: 320px;
+}
+
+/* ==================================================================
+   PIED DE PAGE
+   ================================================================== */
+
+.pied {
+  background-color: var(--brun);
+  color: var(--creme);
+  text-align: center;
+  padding: 2.5rem 1.25rem;
+  margin-top: 0;
+}
+
+.pied-nom {
+  font-family: var(--police-titre);
+  font-size: 1.8rem;
+  margin: 0 0 0.3rem;
+}
+
+.pied-mot {
+  color: var(--kraft);
+  margin: 0 0 1rem;
+}
+
+.pied-annee {
+  font-size: 0.85rem;
+  color: var(--kraft);
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* ==================================================================
+   FICHE DÉTAILLÉE (MODALE)
+   ================================================================== */
+
+.modale-fond {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background-color: rgba(74, 55, 42, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fondu 0.3s ease both;
+}
+
+.modale-fond[hidden] { display: none; }
+
+.modale-boite {
+  position: relative;
+  background-color: var(--blanc-casse);
+  border-radius: 26px;
+  box-shadow: var(--ombre-haute);
+  width: 100%;
+  max-width: 900px;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  padding: 1.5rem;
+  animation: apparition-douce 0.4s ease both;
+}
+
+.modale-fermer {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  z-index: 5;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid var(--beige-fonce);
+  background-color: var(--creme);
+  color: var(--brun);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.modale-fermer:hover {
+  background-color: var(--beige);
+  transform: rotate(90deg);
+}
+
+.modale-contenu {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* --- Galerie de photos --- */
+.modale-photo-principale {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.modale-vignettes {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.vignette {
+  padding: 0;
+  border: 2.5px solid transparent;
+  border-radius: 12px;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color var(--transition), opacity var(--transition);
+  opacity: 0.7;
+}
+
+.vignette img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  display: block;
+}
+
+.vignette:hover { opacity: 1; }
+
+.vignette.active {
+  border-color: var(--terracotta);
+  opacity: 1;
+}
+
+/* --- Informations de la fiche --- */
+.modale-infos h3 {
+  font-size: 2.3rem;
+  margin: 0.5rem 0 0.2rem;
+}
+
+.modale-prix {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--terracotta-fonce);
+  margin-bottom: 0.2rem;
+}
+
+.modale-taille {
+  color: var(--brun-doux);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.modale-description { margin-bottom: 1.25rem; }
+
+/* Petit tableau Matières / Entretien / Délai */
+.modale-details {
+  margin: 0 0 1.5rem;
+  border-top: 2px dashed var(--beige-fonce);
+  padding-top: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.modale-details dt {
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--brun-doux);
+}
+
+.modale-details dd {
+  margin: 0.1rem 0 0;
+}
+
+.modale-infos .btn { width: 100%; }
+
+/* ==================================================================
+   ANIMATIONS DOUCES
+   ================================================================== */
+
+@keyframes fondu {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes apparition-douce {
+  from { opacity: 0; transform: translateY(14px) scale(0.985); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Apparition en fondu au défilement (gérée par js/main.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Respect du réglage « réduire les animations » du visiteur */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ==================================================================
+   TABLETTE (à partir de 620px)
+   ================================================================== */
+
+@media (min-width: 620px) {
+  .section { padding: 4.25rem 0; }
+
+  .grille {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+
+  .contact-boutons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .contact-boutons .btn { width: auto; }
+
+  .modale-boite { padding: 2rem; }
+
+  /* Fiche détaillée en deux colonnes : photos | informations */
+  .modale-contenu {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .modale-infos h3 { margin-top: 1.5rem; }
+}
+
+/* ==================================================================
+   ORDINATEUR (à partir de 920px)
+   ================================================================== */
+
+@media (min-width: 920px) {
+  .section { padding: 5rem 0; }
+
+  .hero { padding: 5.5rem 0 6rem; }
+
+  /* Le burger disparaît, le menu s'affiche en ligne */
+  .burger { display: none; }
+
+  .menu {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    gap: 0.15rem;
+  }
+
+  .menu a {
+    padding: 0.45em 0.95em;
+    font-size: 0.98rem;
+  }
+
+  .grille {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}

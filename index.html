@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ✏️ À PERSONNALISER : le titre et la description qui apparaissent sur Google -->
+  <title>L'Atelier Tout Doux · Des peluches faites main à adopter</title>
+  <meta name="description" content="L'Atelier Tout Doux — des peluches en crochet faites main par Marylou, à adopter ou à commander sur mesure. Douceur garantie.">
+
+  <!-- Petite icône d'onglet (une pelote de laine) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧶</text></svg>">
+
+  <!-- Polices : Caveat (titres manuscrits) + Nunito (texte courant) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Lien d'évitement pour la navigation au clavier -->
+  <a class="lien-evitement" href="#accueil">Aller au contenu</a>
+
+  <!-- ================================================================
+       EN-TÊTE / NAVIGATION
+       ================================================================ -->
+  <header class="entete">
+    <nav class="entete-nav" aria-label="Navigation principale">
+      <a class="logo" href="#accueil">🧶 L'Atelier Tout Doux</a>
+
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Ouvrir le menu">
+        <span class="burger-trait"></span>
+        <span class="burger-trait"></span>
+        <span class="burger-trait"></span>
+      </button>
+
+      <ul class="menu" id="menu-principal">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#boutique">Boutique</a></li>
+        <li><a href="#sur-mesure">Sur mesure</a></li>
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ================================================================
+         ACCUEIL (HERO)
+         ✏️ À PERSONNALISER : le petit mot d'accueil de Marylou ci-dessous
+         ================================================================ -->
+    <section class="hero" id="accueil">
+      <div class="conteneur hero-contenu">
+        <p class="hero-pelote" aria-hidden="true">🧶</p>
+        <h1>L'Atelier Tout Doux</h1>
+        <p class="hero-slogan">Des peluches faites main à adopter</p>
+
+        <div class="hero-mot reveal">
+          <p>Bienvenue dans mon petit atelier de peluches faites main.
+          Je suis Marylou, et je crée des doudous et petits compagnons au crochet,
+          pensés pour apporter douceur et réconfort.</p>
+          <p class="hero-signature" aria-hidden="true">— Marylou</p>
+        </div>
+
+        <a class="btn btn-plein btn-grand" href="#boutique">Découvrir les peluches</a>
+      </div>
+    </section>
+
+    <!-- Bordure festonnée, comme une lisière de crochet -->
+    <div class="feston feston-vers-beige" aria-hidden="true"></div>
+
+    <!-- ================================================================
+         BOUTIQUE
+         Les cartes sont générées automatiquement depuis le tableau
+         `products` qui se trouve en haut de js/main.js.
+         ✏️ Pour modifier les peluches : ouvrez js/main.js
+         ================================================================ -->
+    <section class="section section-beige" id="boutique">
+      <div class="conteneur">
+        <header class="section-tete reveal">
+          <h2>La boutique</h2>
+          <div class="fil" aria-hidden="true"></div>
+          <p class="section-intro">Chaque peluche est crochetée à la main, point par point,
+          dans mon atelier. Il n'en existe pas deux identiques.</p>
+        </header>
+
+        <div class="filtres" role="group" aria-label="Filtrer les peluches">
+          <button type="button" class="filtre actif" data-filtre="tous" aria-pressed="true">Tous</button>
+          <button type="button" class="filtre" data-filtre="disponible" aria-pressed="false">Disponible</button>
+          <button type="button" class="filtre" data-filtre="commande" aria-pressed="false">Sur commande</button>
+        </div>
+
+        <ul class="grille" id="grille-boutique">
+          <!-- Cartes générées par js/main.js -->
+        </ul>
+
+        <p class="grille-vide" id="boutique-vide" hidden>
+          Aucune peluche dans cette catégorie pour le moment. Revenez bientôt,
+          ou contactez-moi sur Instagram pour une commande.
+        </p>
+
+        <noscript>
+          <p class="grille-vide">Ce site a besoin de JavaScript pour afficher les peluches.
+          Merci de l'activer dans votre navigateur.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         DÉJÀ ADOPTÉES
+         Les peluches avec le statut "adoptee" apparaissent ici
+         automatiquement.
+         ================================================================ -->
+    <section class="section section-beige section-adoptees" id="adoptees">
+      <div class="conteneur">
+        <header class="section-tete reveal">
+          <h2>Déjà adoptées</h2>
+          <div class="fil" aria-hidden="true"></div>
+          <p class="section-intro">Ces petites créations ont déjà trouvé leur maison,
+          mais il est parfois possible d'en refaire une similaire sur demande.</p>
+        </header>
+
+        <ul class="grille" id="grille-adoptees">
+          <!-- Cartes générées par js/main.js -->
+        </ul>
+      </div>
+    </section>
+
+    <div class="feston feston-vers-creme" aria-hidden="true"></div>
+
+    <!-- ================================================================
+         SUR MESURE
+         ✏️ À PERSONNALISER : le texte ci-dessous si besoin
+         ================================================================ -->
+    <section class="section" id="sur-mesure">
+      <div class="conteneur conteneur-etroit">
+        <header class="section-tete reveal">
+          <h2>Une peluche rien qu'à vous</h2>
+          <div class="fil" aria-hidden="true"></div>
+        </header>
+
+        <div class="carnet reveal">
+          <p>Vous pouvez me contacter sur Instagram pour discuter d'une création
+          personnalisée&nbsp;: choix de l'animal, des couleurs, de la taille ou
+          d'un modèle similaire à une peluche déjà adoptée.</p>
+          <p>On en discute ensemble, sans engagement, et je vous dis ce qu'il est
+          possible de faire et dans quels délais.</p>
+          <p class="centre">
+            <a class="btn btn-plein lien-instagram" href="#" target="_blank" rel="noopener">Me contacter sur Instagram</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         À PROPOS
+         À personnaliser plus tard avec l'histoire de Marylou
+         ================================================================ -->
+    <section class="section" id="a-propos">
+      <div class="conteneur conteneur-etroit">
+        <header class="section-tete reveal">
+          <h2>À propos de l'atelier</h2>
+          <div class="fil" aria-hidden="true"></div>
+        </header>
+
+        <div class="carnet carnet-penche reveal">
+          <!-- ✏️ À PERSONNALISER : remplacez ce paragraphe par la vraie histoire de Marylou -->
+          <p>Cette partie sera bientôt personnalisée avec l'histoire de Marylou,
+          son univers et la naissance de L'Atelier Tout Doux.</p>
+          <p class="carnet-note" aria-hidden="true">🤍 à suivre…</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="feston feston-vers-beige" aria-hidden="true"></div>
+
+    <!-- ================================================================
+         FAQ (questions fréquentes)
+         ✏️ À PERSONNALISER : vous pouvez ajuster les réponses ci-dessous
+         ================================================================ -->
+    <section class="section section-beige" id="faq">
+      <div class="conteneur conteneur-etroit">
+        <header class="section-tete reveal">
+          <h2>Questions fréquentes</h2>
+          <div class="fil" aria-hidden="true"></div>
+        </header>
+
+        <div class="faq reveal">
+          <details class="faq-item">
+            <summary>Comment acheter une peluche&nbsp;?</summary>
+            <p>Les peluches disponibles sont en vente sur Vinted. Il suffit de cliquer
+            sur le bouton «&nbsp;Je l'adopte&nbsp;!&nbsp;» de la peluche qui vous plaît&nbsp;:
+            il vous emmène directement sur l'annonce, où tout se passe simplement.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Comment passer une commande personnalisée&nbsp;?</summary>
+            <p>Écrivez-moi sur Instagram&nbsp;! On discute ensemble de l'animal, des
+            couleurs et de la taille que vous imaginez, et je vous dis ce qu'il est
+            possible de faire.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Quels sont les délais&nbsp;?</summary>
+            <p>Chaque peluche demande de nombreuses heures de crochet. Les délais
+            varient selon le modèle, la taille et les commandes en cours — en général
+            de une à trois semaines. Je vous donne toujours une estimation avant de
+            commencer.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Les peluches conviennent-elles aux bébés et aux enfants&nbsp;?</summary>
+            <p>Les peluches sont réalisées avec des éléments adaptés et sécurisés
+            (yeux brodés ou de sécurité, coutures solides). Comme pour tout doudou,
+            elles doivent être utilisées sous la surveillance d'un adulte.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Comment entretenir une peluche&nbsp;?</summary>
+            <p>Un lavage doux à la main avec un savon délicat, puis un séchage à
+            l'air libre&nbsp;: c'est tout ce dont elles ont besoin pour rester douces
+            longtemps. Pas de machine ni de sèche-linge.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Comment se passe le paiement&nbsp;?</summary>
+            <p>Le paiement se fait directement via Vinted, c'est simple et sécurisé
+            pour vous comme pour moi.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <div class="feston feston-vers-creme" aria-hidden="true"></div>
+
+    <!-- ================================================================
+         CONTACT
+         Les liens Instagram et Vinted se règlent en haut de js/main.js
+         ================================================================ -->
+    <section class="section" id="contact">
+      <div class="conteneur conteneur-etroit centre">
+        <header class="section-tete reveal">
+          <h2>Un petit mot, une question&nbsp;?</h2>
+          <div class="fil" aria-hidden="true"></div>
+          <p class="section-intro">Le plus simple pour me joindre, c'est Instagram.
+          Et pour adopter une peluche disponible, tout se passe sur Vinted.</p>
+        </header>
+
+        <div class="contact-boutons reveal">
+          <a class="btn btn-plein lien-instagram" href="#" target="_blank" rel="noopener">
+            <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.8" fill="currentColor" stroke="none"/></svg>
+            Instagram
+          </a>
+          <a class="btn btn-contour lien-vinted" href="#" target="_blank" rel="noopener">
+            <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.6 9.2 14.8 3.4a2 2 0 0 0-1.4-.6H5a2 2 0 0 0-2 2v8.4c0 .5.2 1 .6 1.4l5.8 5.8a2 2 0 0 0 2.8 0l8.4-8.4a2 2 0 0 0 0-2.8Z"/><circle cx="8" cy="8" r="1.2" fill="currentColor" stroke="none"/></svg>
+            Ma boutique Vinted
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       PIED DE PAGE
+       ✏️ À PERSONNALISER : le petit mot doux si vous le souhaitez
+       ================================================================ -->
+  <footer class="pied">
+    <p class="pied-nom">🧶 L'Atelier Tout Doux</p>
+    <p class="pied-mot">Fait main, point par point, avec beaucoup d'amour.</p>
+    <p class="pied-annee">© <span id="annee">2026</span> · Marylou</p>
+  </footer>
+
+  <!-- ================================================================
+       FICHE DÉTAILLÉE (MODALE)
+       Le contenu est rempli automatiquement par js/main.js quand on
+       clique sur une peluche. Fermeture : croix, clic sur le fond, Échap.
+       ================================================================ -->
+  <div class="modale-fond" id="modale" role="dialog" aria-modal="true" aria-labelledby="modale-titre" hidden>
+    <div class="modale-boite">
+      <button type="button" class="modale-fermer" aria-label="Fermer la fiche">✕</button>
+      <div class="modale-contenu" id="modale-contenu">
+        <!-- Rempli par js/main.js -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
