@@ -302,6 +302,16 @@
     </div>
   </div>
 
+  <!-- ================================================================
+       AGRANDISSEMENT PHOTO (plein écran)
+       Ouvert au clic sur une photo de la fiche ; affiche l'image
+       entière, non rognée. Fermeture : croix, clic sur le fond, Échap.
+       ================================================================ -->
+  <div class="zoom-fond" id="zoom" role="dialog" aria-modal="true" aria-label="Photo agrandie" hidden>
+    <button type="button" class="zoom-fermer" aria-label="Fermer l'agrandissement">✕</button>
+    <img class="zoom-image" id="zoom-image" src="" alt="">
+  </div>
+
   <script src="js/catalogue.js"></script>
   <script src="js/main.js"></script>
 </body>

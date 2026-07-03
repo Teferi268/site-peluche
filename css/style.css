@@ -776,11 +776,36 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 /* --- Galerie de photos --- */
+.modale-galerie {
+  position: relative;
+}
+
 .modale-photo-principale {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 18px;
+  cursor: zoom-in;
+  display: block;
+}
+
+/* Petite étiquette « loupe » pour indiquer que la photo s'agrandit */
+.zoom-hint {
+  position: absolute;
+  right: 0.7rem;
+  bottom: 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--brun);
+  background-color: rgba(255, 253, 249, 0.9);
+  border: 1.5px solid var(--beige-fonce);
+  border-radius: 999px;
+  padding: 0.25em 0.7em;
+  pointer-events: none;
+  box-shadow: var(--ombre);
 }
 
 .modale-vignettes {
@@ -858,6 +883,57 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 .modale-infos .btn { width: 100%; }
+
+/* ==================================================================
+   AGRANDISSEMENT PHOTO (plein écran)
+   ================================================================== */
+
+.zoom-fond {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background-color: rgba(52, 38, 28, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  cursor: zoom-out;
+  animation: fondu 0.25s ease both;
+}
+
+.zoom-fond[hidden] { display: none; }
+
+.zoom-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: var(--ombre-haute);
+  animation: apparition-douce 0.3s ease both;
+}
+
+.zoom-fermer {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 5;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 253, 249, 0.92);
+  color: var(--brun);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.zoom-fermer:hover {
+  background-color: var(--blanc-casse);
+  transform: rotate(90deg);
+}
 
 /* ==================================================================
    ANIMATIONS DOUCES

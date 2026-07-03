@@ -20,23 +20,65 @@ window.AtelierCatalogue = (function () {
             | "adoptee"    (section « Déjà adoptées »)                */
   const products = [
 
-    // --- La peluche en vente ---
+    // --- Vachette (en vente) ---
     {
-      id: "lapin-barbe-a-papa",
-      nom: "Lapin barbe à papa",
-      prix: 40,
-      taille: "Petit modèle",
-      dimensions: "environ 15 cm",
+      id: "vachette",
+      nom: "Vachette",
+      prix: 26,
+      taille: "Moyen modèle",
+      dimensions: "environ 26 cm",
       statut: "disponible",
-      description: "Un petit lapin tout doux, à la couleur barbe à papa et au regard plein de tendresse. Il est fait pour être serré dans les bras et suivre son adopté partout.",
-      matieres: "Coton doux, broderie coton, rembourrage hypoallergénique",
-      entretien: "Lavage doux à la main, séchage à l'air libre",
+      description: "Vachette entièrement crochetée à la main en laine chenille très douce. Son pelage blanc, ses taches noires et son museau beige sont travaillés maille par maille. Un modèle moyen, à la fois décoratif et agréable à tenir.",
+      matieres: "Laine chenille 100 % polyester",
+      entretien: "Lavage en machine à 40 °C ou à la main. Séchage à l'air libre, à plat.",
       delai: "",
-      vintedUrl: "https://www.vinted.fr/items/9304571558-lapin-barbe-a-papa",
+      vintedUrl: "https://www.vinted.fr/items/9313181360-vachette-crochet",
       photos: [
-        "images/lapin%20barbe%20a%20papa%201.jpg",
-        "images/lapin%20barbe%20a%20papa%202.jpg",
-        "images/lapin%20barbe%20a%20papa%203.jpg"
+        "images/vachette-1.jpg",
+        "images/vachette-2.jpg",
+        "images/vachette-3.jpg"
+      ]
+    },
+
+    // --- Lapin Chocolat (en vente) ---
+    {
+      id: "lapin-chocolat",
+      nom: "Lapin Chocolat",
+      prix: 49,
+      taille: "Moyen modèle",
+      dimensions: "environ 28 cm",
+      statut: "disponible",
+      description: "Lapin crocheté à la main dans une laine chenille duveteuse, aux tons chocolat profonds. Longues oreilles tombantes, museau brodé et yeux ronds sont travaillés maille par maille. Modèle moyen d'environ 28 cm.",
+      matieres: "Laine chenille 100 % polyester",
+      entretien: "Lavage en machine à 40 °C ou à la main. Séchage à l'air libre, à plat.",
+      delai: "",
+      credit: "loveloopsgb",
+      vintedUrl: "https://www.vinted.fr/items/9313164667-lapin-chocolat",
+      photos: [
+        "images/chocolat-1.jpg",
+        "images/chocolat-2.jpg",
+        "images/chocolat-3.jpg"
+      ]
+    },
+
+    // --- Lapin Bordeaux (en vente) ---
+    {
+      id: "lapin-bordeaux",
+      nom: "Lapin Bordeaux",
+      prix: 49,
+      taille: "Moyen modèle",
+      dimensions: "environ 28 cm",
+      statut: "disponible",
+      description: "Lapin crocheté à la main dans une laine chenille duveteuse, d'un profond ton bordeaux. Ses grandes oreilles souples et son museau brodé sont réalisés maille par maille. Modèle moyen d'environ 28 cm.",
+      matieres: "Laine chenille 100 % polyester",
+      entretien: "Lavage en machine à 40 °C ou à la main. Séchage à l'air libre, à plat.",
+      delai: "",
+      credit: "loveloopsgb",
+      vintedUrl: "https://www.vinted.fr/items/9313154123-lapin-bordeaux",
+      photos: [
+        "images/bordeaux-1.jpg",
+        "images/bordeaux-2.jpg",
+        "images/bordeaux-3.jpg"
       ]
     },
 
@@ -52,6 +94,7 @@ window.AtelierCatalogue = (function () {
       matieres: "Coton doux, broderie coton, rembourrage hypoallergénique",
       entretien: "Lavage doux à la main, séchage à l'air libre",
       delai: "",
+      credit: "loveloopsgb",
       vintedUrl: "",
       photos: [
         "images/lapin%20barbe%20a%20papa%201.jpg",

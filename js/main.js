@@ -166,6 +166,31 @@
   const boutonFermer = modale ? modale.querySelector(".modale-fermer") : null;
   let elementAvantModale = null;
 
+  // Agrandissement plein écran d'une photo
+  const zoom = document.getElementById("zoom");
+  const zoomImage = document.getElementById("zoom-image");
+  const zoomFermer = zoom ? zoom.querySelector(".zoom-fermer") : null;
+  let photoAvantZoom = null;
+
+  function ouvrirZoom(src, alt) {
+    if (!zoom || !zoomImage) return;
+    photoAvantZoom = document.activeElement;
+    zoomImage.src = src;
+    zoomImage.alt = alt || "";
+    zoom.hidden = false;
+    if (zoomFermer) zoomFermer.focus();
+  }
+
+  function fermerZoom() {
+    if (!zoom) return;
+    zoom.hidden = true;
+    zoomImage.removeAttribute("src");
+    if (photoAvantZoom) {
+      photoAvantZoom.focus();
+      photoAvantZoom = null;
+    }
+  }
+
   function ficheHTML(product) {
     const action = actionProduit(product);
     const badge = badgeProduit(product.statut);
@@ -184,9 +209,16 @@
       ? "<dt>Délai de confection</dt><dd>" + texte(product.delai) + "</dd>"
       : "";
 
+    // Crédit du modèle (ex : patron d'une créatrice sur Instagram)
+    const ligneCredit = product.credit && product.credit.trim() !== ""
+      ? '<dt>Modèle</dt><dd>D\'après <a href="https://www.instagram.com/' + texte(product.credit) +
+        '/" target="_blank" rel="noopener">@' + texte(product.credit) + "</a></dd>"
+      : "";
+
     return (
       '<div class="modale-galerie">' +
-        '<img class="modale-photo-principale" src="' + texte(photos[0]) + '" alt="Peluche ' + texte(product.nom) + ' au crochet">' +
+        '<img class="modale-photo-principale" src="' + texte(photos[0]) + '" alt="Peluche ' + texte(product.nom) + ' au crochet" title="Cliquez pour agrandir">' +
+        '<span class="zoom-hint" aria-hidden="true">🔍 Agrandir</span>' +
         (photos.length > 1
           ? '<div class="modale-vignettes" role="group" aria-label="Photos de la peluche">' + vignettes + "</div>"
           : "") +
@@ -201,6 +233,7 @@
           "<div><dt>Matières</dt><dd>" + texte(product.matieres) + "</dd></div>" +
           "<div><dt>Entretien</dt><dd>" + texte(product.entretien) + "</dd></div>" +
           (ligneDelai ? "<div>" + ligneDelai + "</div>" : "") +
+          (ligneCredit ? "<div>" + ligneCredit + "</div>" : "") +
         "</dl>" +
         '<a class="btn btn-plein" href="' + texte(action.url) + '" target="_blank" rel="noopener">' + texte(action.label) + "</a>" +
       "</div>"
@@ -250,6 +283,19 @@
         bouton.classList.remove("active");
       });
       vignette.classList.add("active");
+      return;
+    }
+
+    // Clic sur la grande photo de la fiche → agrandissement plein écran
+    const photoPrincipale = event.target.closest(".modale-photo-principale");
+    if (photoPrincipale) {
+      ouvrirZoom(photoPrincipale.src, photoPrincipale.alt);
+      return;
+    }
+
+    // Fermeture du zoom : clic n'importe où dessus (fond, image ou croix)
+    if (zoom && !zoom.hidden && zoom.contains(event.target)) {
+      fermerZoom();
     }
   });
 
@@ -261,6 +307,17 @@
   }
 
   document.addEventListener("keydown", function (event) {
+    // L'agrandissement photo est au-dessus de la fiche : il capte le clavier en premier.
+    if (zoom && !zoom.hidden) {
+      if (event.key === "Escape") {
+        fermerZoom();
+      } else if (event.key === "Tab") {
+        event.preventDefault();
+        if (zoomFermer) zoomFermer.focus();
+      }
+      return;
+    }
+
     if (!modale || modale.hidden) return;
 
     if (event.key === "Escape") {
