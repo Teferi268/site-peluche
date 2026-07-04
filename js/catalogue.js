@@ -82,24 +82,65 @@ window.AtelierCatalogue = (function () {
       ]
     },
 
-    // --- La même peluche, déjà adoptée (exemple de création) ---
+    // --- Lapin rose, déjà adopté (exemple de création) ---
     {
-      id: "lapin-barbe-a-papa-adoptee",
-      nom: "Lapin barbe à papa",
+      id: "lapin-rose-adoptee",
+      nom: "Lapin rose",
       prix: 40,
       taille: "Petit modèle",
       dimensions: "environ 15 cm",
       statut: "adoptee",
-      description: "Un petit lapin tout doux, à la couleur barbe à papa et au regard plein de tendresse. Il est fait pour être serré dans les bras et suivre son adopté partout.",
+      description: "Un petit lapin tout doux, au regard plein de tendresse. Il est fait pour être serré dans les bras et suivre son adopté partout.",
       matieres: "Coton doux, broderie coton, rembourrage hypoallergénique",
       entretien: "Lavage doux à la main, séchage à l'air libre",
       delai: "",
       credit: "loveloopsgb",
       vintedUrl: "",
       photos: [
-        "images/lapin%20barbe%20a%20papa%201.jpg",
-        "images/lapin%20barbe%20a%20papa%202.jpg",
-        "images/lapin%20barbe%20a%20papa%203.jpg"
+        "images/lapin rose 1.jpg",
+        "images/lapin rose 2.jpg",
+        "images/lapin rose 3.jpg"
+      ]
+    },
+
+    // --- Lapin Barbe à papa (en vente) ---
+    {
+      id: "lapin-barbe-a-papa",
+      nom: "Lapin Barbe à papa",
+      prix: 43,
+      taille: "Moyen modèle",
+      dimensions: "environ 27 cm",
+      statut: "disponible",
+      description: "Lapin crocheté à la main dans une laine chenille duveteuse, d'un rose tendre façon barbe à papa. Ses longues oreilles tombantes et son museau brodé sont travaillés maille par maille. Modèle moyen d'environ 27 cm.",
+      matieres: "Laine chenille 100 % polyester",
+      entretien: "Lavage en machine à 40 °C ou à la main. Séchage à l'air libre, à plat.",
+      delai: "",
+      credit: "loveloopsgb",
+      vintedUrl: "",
+      photos: [
+        "images/lapin-barbe-a-papa-1.jpg",
+        "images/lapin-barbe-a-papa-2.jpg",
+        "images/lapin-barbe-a-papa-3.jpg"
+      ]
+    },
+
+    // --- Girafe, déjà adoptée ---
+    {
+      id: "girafe",
+      nom: "Girafe",
+      prix: 50,
+      taille: "Moyen modèle",
+      dimensions: "environ 35 cm",
+      statut: "adoptee",
+      description: "Girafe crochetée à la main dans une laine chenille douce, avec ses taches rousses et son museau gris texturé. Un modèle moyen d'environ 35 cm, travaillé maille par maille.",
+      matieres: "Laine chenille 100 % polyester",
+      entretien: "Lavage en machine à 40 °C ou à la main. Séchage à l'air libre, à plat.",
+      delai: "",
+      vintedUrl: "",
+      photos: [
+        "images/girafe-1.jpg",
+        "images/girafe-2.jpg",
+        "images/girafe-3.jpg"
       ]
     }
 
