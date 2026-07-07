@@ -40,20 +40,20 @@ window.AtelierCatalogue = (function () {
       ]
     },
 
-    // --- Lapin Chocolat (en vente) ---
+    // --- Lapin Chocolat (déjà adopté) ---
     {
       id: "lapin-chocolat",
       nom: "Lapin Chocolat",
       prix: 49,
       taille: "Moyen modèle",
       dimensions: "environ 28 cm",
-      statut: "disponible",
+      statut: "adoptee",
       description: "Lapin crocheté à la main dans une laine chenille duveteuse, aux tons chocolat profonds. Longues oreilles tombantes, museau brodé et yeux ronds sont travaillés maille par maille. Modèle moyen d'environ 28 cm.",
       matieres: "Laine chenille 100 % polyester",
       entretien: "Lavage en machine à 40 °C ou à la main. Séchage à l'air libre, à plat.",
       delai: "",
       credit: "loveloopsgb",
-      vintedUrl: "https://www.vinted.fr/items/9313164667-lapin-chocolat",
+      vintedUrl: "",
       photos: [
         "images/chocolat-1.jpg",
         "images/chocolat-2.jpg",
@@ -103,14 +103,14 @@ window.AtelierCatalogue = (function () {
       ]
     },
 
-    // --- Lapin Barbe à papa (en vente) ---
+    // --- Lapin Barbe à papa (déjà adopté) ---
     {
       id: "lapin-barbe-a-papa",
       nom: "Lapin Barbe à papa",
       prix: 43,
       taille: "Moyen modèle",
       dimensions: "environ 27 cm",
-      statut: "disponible",
+      statut: "adoptee",
       description: "Lapin crocheté à la main dans une laine chenille duveteuse, d'un rose tendre façon barbe à papa. Ses longues oreilles tombantes et son museau brodé sont travaillés maille par maille. Modèle moyen d'environ 27 cm.",
       matieres: "Laine chenille 100 % polyester",
       entretien: "Lavage en machine à 40 °C ou à la main. Séchage à l'air libre, à plat.",
