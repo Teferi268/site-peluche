@@ -5,8 +5,8 @@
 ### Un site web conçu et développé par Mathieu Morin pour présenter les créations au crochet de Marylou
 
 <p>
-  <a href="https://latelier-tout-doux.com/">
-    <img src="https://img.shields.io/badge/🌐_Voir_le_site-latelier--tout--doux.com-9C5F45?style=for-the-badge" alt="Voir le site en production">
+  <a href="https://lateliertoutdoux.netlify.app/">
+    <img src="https://img.shields.io/badge/🌐_Voir_le_site-lateliertoutdoux.netlify.app-9C5F45?style=for-the-badge" alt="Voir le site en production">
   </a>
   <a href="https://github.com/Teferi268/site-peluche">
     <img src="https://img.shields.io/badge/GitHub-Voir_le_dépôt-181717?style=for-the-badge&logo=github" alt="Voir le dépôt GitHub">
@@ -52,7 +52,7 @@ déployer un site utilisable en production.
 
 Le site est accessible en production :
 
-**[latelier-tout-doux.com](https://latelier-tout-doux.com/)**
+**[lateliertoutdoux.netlify.app](https://lateliertoutdoux.netlify.app/)**
 
 L'interface reprend l'univers doux et artisanal de la marque : palette
 chaleureuse, typographie manuscrite pour les titres, cartes produits,
@@ -371,7 +371,7 @@ Le site est déployé sur **Netlify** depuis le dépôt GitHub. Le domaine publi
 personnalisé est configuré avec le fichier [`CNAME`](./CNAME).
 
 **Site en production :**
-[latelier-tout-doux.com](https://latelier-tout-doux.com/)
+[lateliertoutdoux.netlify.app](https://lateliertoutdoux.netlify.app/)
 
 Le code source est disponible sur
 [github.com/Teferi268/site-peluche](https://github.com/Teferi268/site-peluche).
