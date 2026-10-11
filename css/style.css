@@ -603,6 +603,43 @@ ul { list-style: none; margin: 0; padding: 0; }
   padding-top: 3rem;
 }
 
+.adoptees-toggle {
+  display: none;
+}
+
+@media (max-width: 619px) {
+  .adoptees-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.65em 1.1em;
+    border: 2px solid var(--beige-fonce);
+    border-radius: 999px;
+    background-color: var(--blanc-casse);
+    color: var(--brun);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color 180ms ease-out, transform 160ms ease-out;
+  }
+
+  .adoptees-toggle::after {
+    content: "↓";
+    font-size: 1.1em;
+  }
+
+  .adoptees-toggle:hover,
+  .adoptees-toggle:focus-visible {
+    background-color: var(--kraft);
+  }
+
+  .adoptees-toggle:active {
+    transform: scale(0.97);
+  }
+}
+
 /* ==================================================================
    EXEMPLE DE COMMANDE — comparaison entre les photos originales et la création
    ================================================================== */

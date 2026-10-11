@@ -111,6 +111,10 @@
   const grilleAdoptees = document.getElementById("grille-adoptees");
   const messageVide = document.getElementById("boutique-vide");
   const boutonsFiltre = document.querySelectorAll(".filtre");
+  const boutonAdoptees = document.querySelector(".adoptees-toggle");
+  const nombreAdopteesParEtape = 2;
+  let nombreAdopteesAffichees = nombreAdopteesParEtape;
+  let listeAdoptees = [];
 
   function afficherBoutique(filtre) {
     if (!grilleBoutique || !messageVide) return;
@@ -139,13 +143,40 @@
     const section = document.getElementById("adoptees");
     if (!grilleAdoptees || !section) return;
 
-    const adoptees = products.filter(function (product) {
+    listeAdoptees = products.filter(function (product) {
       return product.statut === "adoptee";
     });
 
-    grilleAdoptees.innerHTML = adoptees.map(carteHTML).join("");
-    section.hidden = adoptees.length === 0;
+    const estMobile = window.matchMedia("(max-width: 619px)").matches;
+    const nombreAAfficher = estMobile
+      ? Math.min(nombreAdopteesAffichees, listeAdoptees.length)
+      : listeAdoptees.length;
+
+    grilleAdoptees.innerHTML = listeAdoptees
+      .slice(0, nombreAAfficher)
+      .map(carteHTML)
+      .join("");
+    section.hidden = listeAdoptees.length === 0;
+
+    if (boutonAdoptees) {
+      const reste = listeAdoptees.length - nombreAAfficher;
+      boutonAdoptees.hidden = !estMobile || reste === 0;
+      if (reste > 0) {
+        const nombreSuivant = Math.min(nombreAdopteesParEtape, reste);
+        boutonAdoptees.textContent = reste <= nombreAdopteesParEtape
+          ? "Voir les " + nombreSuivant + " dernières"
+          : "Voir " + nombreSuivant + " autres peluches";
+      }
+    }
+
     observerReveals(grilleAdoptees);
+  }
+
+  if (boutonAdoptees) {
+    boutonAdoptees.addEventListener("click", function () {
+      nombreAdopteesAffichees += nombreAdopteesParEtape;
+      afficherAdoptees();
+    });
   }
 
   boutonsFiltre.forEach(function (bouton) {
@@ -417,6 +448,7 @@
 
   afficherBoutique("tous");
   afficherAdoptees();
+  window.matchMedia("(max-width: 619px)").addEventListener("change", afficherAdoptees);
   appliquerLiens();
   observerReveals(document);
 
