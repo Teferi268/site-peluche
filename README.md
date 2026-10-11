@@ -1,15 +1,15 @@
 <div align="center">
 
-# L'Atelier Tout Doux
+# L'Atelier Tout Doux — Site vitrine pour une créatrice artisanale
 
-### Des peluches crochetées à la main, imaginées avec douceur
+### Un site web conçu et développé par Mathieu Morin pour présenter les créations au crochet de Marylou
 
 <p>
-  <a href="https://latelier-tout-doux.com">
-    <img src="https://img.shields.io/badge/🌐_Voir_le_site-latelier--tout--doux.com-9C5F45?style=for-the-badge" alt="Voir le site">
+  <a href="https://latelier-tout-doux.com/">
+    <img src="https://img.shields.io/badge/🌐_Voir_le_site-latelier--tout--doux.com-9C5F45?style=for-the-badge" alt="Voir le site en production">
   </a>
-  <a href="https://www.instagram.com/atelier.toutdoux/">
-    <img src="https://img.shields.io/badge/Instagram-atelier.toutdoux-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
+  <a href="https://github.com/Teferi268/site-peluche">
+    <img src="https://img.shields.io/badge/GitHub-Voir_le_dépôt-181717?style=for-the-badge&logo=github" alt="Voir le dépôt GitHub">
   </a>
 </p>
 
@@ -17,167 +17,299 @@
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3">
   <img src="https://img.shields.io/badge/JavaScript_vanilla-F7DF1E?style=flat-square&logo=javascript&logoColor=111111" alt="JavaScript vanilla">
-  <img src="https://img.shields.io/badge/GitHub_Pages-222222?style=flat-square&logo=github&logoColor=white" alt="GitHub Pages">
+  <img src="https://img.shields.io/badge/WebP-Optimisation-8A5A44?style=flat-square" alt="Images WebP">
+  <img src="https://img.shields.io/badge/Netlify-Déploiement-00C7B7?style=flat-square&logo=netlify&logoColor=white" alt="Netlify">
 </p>
 
 <p>
-  <strong>Site vitrine statique pour l'activité artisanale de Marylou.</strong><br>
-  Découvrez les créations disponibles, les peluches déjà adoptées et les commandes personnalisées.
+  <strong>Développement web : Mathieu Morin</strong><br>
+  <strong>Créations artisanales : Marylou — L'Atelier Tout Doux</strong>
 </p>
 
 </div>
 
 ---
 
-## À propos
+## Présentation
 
-**L'Atelier Tout Doux** est un site vitrine pensé pour présenter des peluches
-et des doudous crochetés à la main. Le site met en avant l'univers artisanal,
-la disponibilité des créations et la possibilité de demander une réalisation
-sur mesure.
+**L'Atelier Tout Doux** est un site vitrine réalisé pour Marylou, une créatrice
+indépendante de peluches artisanales au crochet.
 
-Le projet est volontairement simple à maintenir :
+J'ai conçu et développé ce projet pour répondre à un besoin concret : donner
+une présence en ligne à son activité, présenter ses créations de manière
+attractive et faciliter les prises de contact ainsi que les achats.
 
-- aucune base de données ;
-- aucun framework ;
-- aucune dépendance npm ;
-- un catalogue centralisé dans un seul fichier ;
-- un déploiement possible directement avec GitHub Pages.
+Le projet est également une réalisation de mon portfolio d'étudiant en
+informatique. Il montre ma capacité à partir d'un besoin utilisateur réel,
+choisir une architecture adaptée, développer une interface complète et
+déployer un site utilisable en production.
 
-## Ce que propose le site
+> **Mon rôle :** analyse du besoin, conception de l'interface, développement
+> front-end, structuration des données, responsive design, accessibilité,
+> optimisation des images, tests manuels et déploiement.
 
-<table>
-  <tr>
-    <td width="50%">
-      <h3>🧸 Un catalogue vivant</h3>
-      <p>Les créations sont automatiquement réparties entre la boutique et les peluches déjà adoptées.</p>
-    </td>
-    <td width="50%">
-      <h3>🔎 Une recherche intelligente</h3>
-      <p>Recherche par animal, couleur, taille, caractéristique, faute courante ou traduction.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <h3>📱 Une expérience mobile</h3>
-      <p>Grilles adaptées aux petits écrans, menu mobile et affichage progressif des créations adoptées.</p>
-    </td>
-    <td width="50%">
-      <h3>💛 Des commandes personnalisées</h3>
-      <p>Un parcours en quatre étapes et l'exemple Tao montrent comment une peluche peut être créée sur mesure.</p>
-    </td>
-  </tr>
-</table>
+## Aperçu du site
 
-## Fonctionnalités
+Le site est accessible en production :
 
-### Catalogue et statuts
+**[latelier-tout-doux.com](https://latelier-tout-doux.com/)**
 
-Chaque peluche est décrite dans [`js/catalogue.js`](./js/catalogue.js) avec son
-nom, son prix, ses dimensions, ses photos, sa description et son lien d'action.
+L'interface reprend l'univers doux et artisanal de la marque : palette
+chaleureuse, typographie manuscrite pour les titres, cartes produits,
+photographies des créations et parcours de commande personnalisé.
 
-| Statut | Où apparaît la création ? | Bouton |
-| :---: | --- | --- |
-| `disponible` | Boutique | Voir sur Vinted |
+Aucune capture d'écran n'est versionnée dans le dépôt pour le moment. Le lien
+ci-dessus permet de consulter le rendu réel et les interactions directement
+dans le navigateur.
+
+## Contexte et problématique
+
+Avant le projet, l'activité avait besoin d'un espace clair pour :
+
+- présenter les peluches disponibles à l'adoption ;
+- conserver une trace des créations déjà réalisées ;
+- valoriser les commandes personnalisées ;
+- montrer la possibilité de reproduire un animal à partir de photos ;
+- rediriger les visiteurs vers Instagram pour échanger ;
+- rediriger les acheteurs vers Vinted pour les créations disponibles ;
+- rester simple à mettre à jour sans base de données ni interface
+  d'administration complexe.
+
+La problématique n'était donc pas uniquement visuelle. Il fallait transformer
+un catalogue artisanal et des contenus hétérogènes en une expérience web
+compréhensible, responsive et maintenable.
+
+## Fonctionnalités développées
+
+### Catalogue dynamique
+
+Les produits ne sont pas écrits directement dans les cartes HTML. Ils sont
+définis dans [`js/catalogue.js`](./js/catalogue.js), puis générés par
+[`js/main.js`](./js/main.js).
+
+Chaque création possède notamment :
+
+- un identifiant et un nom ;
+- un prix, une taille et des dimensions ;
+- un statut ;
+- une description ;
+- les matières et les consignes d'entretien ;
+- une ou plusieurs photos ;
+- un lien Vinted ou Instagram selon le cas.
+
+Cette séparation permet de modifier le contenu du catalogue sans toucher à la
+structure de la page.
+
+### Gestion des statuts
+
+Trois statuts organisent automatiquement l'affichage :
+
+| Statut | Affichage | Action principale |
+| --- | --- | --- |
+| `disponible` | Boutique | Ouvrir l'annonce Vinted |
 | `commande` | Boutique | Contacter Marylou sur Instagram |
-| `adoptee` | Déjà adoptées | Demander une création similaire |
+| `adoptee` | Section « Déjà adoptées » | Demander une création similaire |
 
-### Recherche multilingue
+Les boutons, badges et sections sont adaptés automatiquement au statut de
+chaque produit.
 
-La recherche comprend les majuscules, les accents, certaines fautes et
-plusieurs langues : français, anglais, allemand, italien, espagnol et
-néerlandais.
+### Recherche textuelle multilingue
 
-Elle peut rechercher dans :
+La boutique inclut une recherche instantanée qui :
 
-- le nom et l'identifiant ;
-- l'animal ;
-- les couleurs ;
-- la taille et les dimensions ;
+- ignore les majuscules et les accents ;
+- accepte plusieurs mots comme `panda noir` ;
+- corrige certaines fautes courantes comme `pinguoin` ;
+- reconnaît des synonymes en français, anglais, allemand, italien, espagnol
+  et néerlandais ;
+- recherche dans le nom, la description, la taille, les dimensions, les
+  matières, l'entretien et le statut.
+
+Techniquement, la saisie est normalisée avec `toLocaleLowerCase`, `normalize`
+et la suppression des diacritiques. Les synonymes sont ensuite convertis vers
+un terme de recherche commun avant la comparaison avec les données du produit.
+
+### Filtres interactifs
+
+Les boutons **Tous**, **Disponible** et **Sur commande** filtrent le catalogue
+sans rechargement de page. Les états sont reflétés par `aria-pressed` afin de
+conserver une interaction compréhensible au clavier et pour les technologies
+d'assistance.
+
+### Fiches détaillées et galeries
+
+Cliquer sur une carte ouvre une fiche détaillée dans une modale avec :
+
+- la photo principale ;
+- les vignettes de la galerie ;
+- le prix et le statut ;
 - la description ;
 - les matières et l'entretien ;
-- le statut de la création.
+- le délai éventuel ;
+- le crédit du modèle lorsqu'il est renseigné ;
+- l'action adaptée à la création.
 
-Exemples :
+Les images de Tao présentes dans la section sur mesure peuvent également être
+agrandies dans une seconde modale de zoom.
 
-```text
-lapin · bunny · rabbit · Hase · coniglio · conejo · konijn
-pingouin · pinguoin · penguin · Pinguin · pinguino · pingüino · pinguïn
-panda noir · lapin rose · lavender · klein · custom cat
-```
+### Responsive design et affichage progressif
 
-### Projet Tao
+Le site est conçu en mobile-first :
 
-Tao est présenté comme **un exemple de commande personnalisée**, pas comme un
-produit à vendre. La section compare les photos du chat disparu et celles de la
-peluche réalisée au crochet à partir de ces photos.
+- menu de navigation adapté aux petits écrans ;
+- grilles qui passent d'une à plusieurs colonnes selon la largeur ;
+- étapes de commande empilées verticalement sur téléphone ;
+- cartes et boutons utilisables sans débordement horizontal ;
+- deux créations adoptées affichées initialement sur mobile ;
+- bouton en haut et en bas pour afficher progressivement les suivantes.
 
-Les images sont :
+Sur ordinateur, la section des créations adoptées reste visible directement.
 
-- cliquables ;
-- agrandissables en plein écran ;
-- utilisables au clavier ;
-- accompagnées d'un texte alternatif.
+### Commandes personnalisées et projet Tao
 
-### Affichage responsive
+La section **Sur mesure** présente le parcours en quatre étapes :
 
-Le site est pensé mobile-first :
+1. le visiteur partage son idée ou ses photos ;
+2. les détails, le prix et le délai sont définis ensemble ;
+3. Marylou réalise la peluche à la main ;
+4. les modalités de remise ou d'envoi sont organisées.
 
-- navigation compacte sur téléphone ;
-- grilles qui s'adaptent à la largeur disponible ;
-- deux créations adoptées visibles au départ ;
-- boutons en haut et en bas pour charger progressivement la suite ;
-- étapes de commande empilées verticalement sur petit écran ;
-- prise en compte de `prefers-reduced-motion`.
+Le projet Tao sert d'exemple concret : la galerie compare les photos du chat
+ayant servi d'inspiration avec les photos de la peluche réalisée au crochet.
+Il s'agit d'un exemple de commande personnalisée, pas d'un produit en vente.
 
-## Aperçu du parcours de commande
+### Accessibilité et interactions
 
-La section sur mesure explique simplement le fonctionnement :
+Le site intègre notamment :
 
-| Étape | Ce qui se passe |
-| :---: | --- |
-| **1** | Vous envoyez votre idée, vos couleurs, une taille ou des photos |
-| **2** | Nous échangeons sur la faisabilité, le prix et le délai |
-| **3** | Marylou réalise la création à la main |
-| **4** | Nous définissons la remise ou l'envoi de la peluche |
-
-## Organisation du projet
-
-```text
-site-peluche/
-├── index.html              # Structure, contenu et sections de la page
-├── css/
-│   └── style.css           # Design, responsive et animations
-├── js/
-│   ├── catalogue.js        # Données des peluches et liens
-│   └── main.js             # Rendu et interactions
-├── images/                 # Photos du catalogue historique
-├── photo/                  # Photos récentes et photos du projet Tao
-├── CNAME                   # Domaine personnalisé GitHub Pages
-├── images/README.md        # Notes liées aux ressources image
-└── README.md               # Documentation du projet
-```
-
-Les photos utilisées par le site sont principalement en **WebP** pour limiter
-le poids des pages. Les JPG, HEIC et MOV conservés dans le dépôt servent de
-sources ou d'archives et ne sont pas nécessaires au fonctionnement courant.
+- un lien d'évitement pour la navigation au clavier ;
+- une navigation principale avec libellés accessibles ;
+- des boutons sémantiques et des états `aria-*` ;
+- des textes alternatifs pour les images ;
+- des modales avec fermeture au bouton, au clic extérieur ou avec `Échap` ;
+- la restitution du focus à l'élément qui a ouvert la modale ;
+- des contrôles clavier pour les images agrandissables ;
+- la prise en compte de `prefers-reduced-motion`.
 
 ## Stack technique
 
-| Technologie | Utilisation |
+| Technologie | Utilisation dans le projet |
 | --- | --- |
-| HTML5 | Structure sémantique et contenu |
-| CSS3 | Design artisanal, responsive et transitions |
-| JavaScript vanilla | Catalogue, recherche, filtres et modales |
-| WebP | Optimisation des images |
-| Google Fonts | Typographies Caveat et Nunito |
-| GitHub Pages | Hébergement statique et domaine personnalisé |
+| **HTML5** | Structure sémantique de la page, sections, formulaires et modales |
+| **CSS3** | Design visuel, responsive design, grilles, états interactifs et transitions |
+| **JavaScript vanilla** | Catalogue, recherche, filtres, modales, menu mobile et liens dynamiques |
+| **WebP** | Réduction du poids des photographies utilisées par le site |
+| **Google Fonts** | Typographies Caveat et Nunito |
+| **Git / GitHub** | Versionnement et hébergement du code source |
+| **Netlify** | Déploiement du site statique en production |
+| **CNAME** | Configuration du domaine personnalisé associé au projet |
 
-## Démarrer en local
+### Pourquoi une architecture statique ?
+
+Le besoin ne nécessitait ni authentification, ni base de données, ni serveur
+d'application. Une architecture composée de fichiers HTML, CSS et JavaScript
+est donc adaptée au périmètre :
+
+- peu de surface technique à maintenir ;
+- hébergement peu coûteux et rapide ;
+- déploiement simple depuis le dépôt Git ;
+- chargement rapide des pages ;
+- contenu du catalogue modifiable dans un fichier identifiable.
+
+Cette simplicité est un choix d'architecture cohérent avec le projet, pas une
+limitation accidentelle.
+
+## Architecture du projet
+
+```text
+site-peluche/
+├── index.html              # Structure de la page et contenu éditorial
+├── css/
+│   └── style.css           # Design, responsive design et états visuels
+├── js/
+│   ├── catalogue.js        # Données des produits et liens externes
+│   └── main.js             # Rendu, recherche et interactions
+├── images/                 # Images historiques et versions optimisées
+├── photo/                  # Photos récentes, Tao et créations du catalogue
+├── CNAME                   # Domaine personnalisé
+├── images/README.md        # Notes sur les ressources images
+└── README.md               # Documentation du projet
+```
+
+La séparation des responsabilités reste volontairement lisible :
+
+- `index.html` décrit la structure générale et les contenus fixes ;
+- `style.css` centralise le design et les adaptations par largeur d'écran ;
+- `catalogue.js` contient les données métier du catalogue ;
+- `main.js` transforme ces données en interface et gère les événements ;
+- `images/` et `photo/` regroupent les ressources visuelles.
+
+## Défis techniques et solutions
+
+### 1. Rendre le catalogue facile à maintenir
+
+**Défi :** éviter de dupliquer le HTML pour chaque peluche et permettre à
+Marylou de modifier les informations au même endroit.
+
+**Solution :** centraliser les produits dans un tableau JavaScript, puis
+générer les cartes et les fiches à partir de leurs propriétés. Les statuts
+pilotent également les sections et les actions disponibles.
+
+### 2. Proposer une recherche utile malgré les variations de saisie
+
+**Défi :** un visiteur peut écrire `pinguoin`, `bunny`, `Hase` ou utiliser
+des accents et plusieurs mots.
+
+**Solution :** normaliser les chaînes, supprimer les accents, associer les
+synonymes multilingues à des termes communs et exiger que chaque mot saisi
+corresponde au contenu indexé du produit.
+
+### 3. Adapter une galerie riche aux écrans mobiles
+
+**Défi :** afficher plusieurs étapes, galeries et créations adoptées sans
+forcer l'utilisateur à parcourir une page trop longue ni provoquer de
+débordement horizontal.
+
+**Solution :** utiliser des grilles CSS responsive, empiler les étapes sous
+619 px et afficher les créations adoptées par groupes de deux sur mobile, avec
+des contrôles accessibles en haut et en bas de la section.
+
+### 4. Corriger et optimiser des ressources photographiques hétérogènes
+
+**Défi :** certaines images d'origine utilisaient des formats ou des noms de
+fichiers peu fiables pour une intégration web directe, ce qui provoquait des
+images absentes et alourdissait le chargement.
+
+**Solution :** convertir les ressources utilisées en WebP, corriger les
+références du catalogue et vérifier les cas particuliers, notamment les noms
+contenant des espaces comme ceux du lapin rose.
+
+### 5. Construire des modales utilisables au clavier
+
+**Défi :** afficher une galerie détaillée et un zoom sans perdre le contexte
+de navigation ni rendre l'interaction dépendante de la souris.
+
+**Solution :** utiliser des boutons sémantiques, des rôles ARIA, une fermeture
+avec `Échap`, une gestion du focus et la restitution du focus à l'élément
+initial après fermeture.
+
+## Performance et optimisation
+
+Les photographies utilisées par le catalogue ont été converties en WebP afin
+de réduire le poids des ressources. Le chargement différé est utilisé sur les
+images de catalogue et les galeries qui ne sont pas immédiatement visibles.
+
+Les animations d'apparition utilisent `IntersectionObserver` lorsque cela est
+possible et sont désactivées ou réduites lorsque le navigateur indique une
+préférence pour moins de mouvement.
+
+## Lancer le projet en local
+
+Le projet ne nécessite aucune installation npm.
 
 ### Option rapide
 
-Ouvrir [`index.html`](./index.html) dans un navigateur.
+Ouvrir [`index.html`](./index.html) directement dans un navigateur.
 
 ### Option recommandée
 
@@ -189,8 +321,8 @@ python -m http.server 8000
 
 Puis ouvrir [http://localhost:8000](http://localhost:8000).
 
-Un serveur statique est préférable pour tester les chemins de fichiers et le
-comportement le plus proche de GitHub Pages.
+Un serveur statique local permet de tester les chemins d'images et le
+comportement dans des conditions proches de la production.
 
 ## Modifier le catalogue
 
@@ -200,53 +332,20 @@ Les données sont centralisées dans
 Pour ajouter une création :
 
 1. copier un objet existant ;
-2. choisir un `id` unique ;
-3. renseigner le nom, le prix et les dimensions ;
+2. choisir un identifiant unique ;
+3. renseigner le nom, le prix, la taille et les dimensions ;
 4. choisir `disponible`, `commande` ou `adoptee` ;
 5. ajouter les chemins des photos WebP ;
-6. renseigner le lien Vinted si la création est disponible ;
-7. recharger le site et vérifier la fiche.
-
-Exemple :
-
-```javascript
-{
-  id: "nom-unique",
-  nom: "Nom de la peluche",
-  prix: 45,
-  taille: "Moyen modèle",
-  dimensions: "environ 25 cm",
-  statut: "disponible",
-  description: "Description de la création.",
-  matieres: "Laine chenille 100 % polyester",
-  entretien: "Lavage doux à la main.",
-  delai: "",
-  vintedUrl: "https://www.vinted.fr/...",
-  photos: [
-    "photo/nom-1.webp",
-    "photo/nom-2.webp"
-  ]
-}
-```
+6. renseigner le lien Vinted si nécessaire ;
+7. vérifier l'affichage sur ordinateur et sur téléphone.
 
 Les liens généraux Instagram et Vinted sont regroupés dans l'objet `settings`
-de [`js/catalogue.js`](./js/catalogue.js).
+du même fichier.
 
-## Ajouter une photo
+## Vérifications
 
-Pour une nouvelle image :
-
-1. utiliser un nom de fichier simple et stable ;
-2. redimensionner la photo si sa résolution est excessive ;
-3. exporter en WebP ;
-4. placer le fichier dans `photo/` ou `images/` ;
-5. ajouter son chemin dans le catalogue ;
-6. vérifier son affichage sur ordinateur et sur téléphone.
-
-Les images de galerie doivent conserver un texte alternatif descriptif lorsqu'il
-s'agit d'une image écrite directement dans `index.html`.
-
-## Vérifications avant publication
+Le dépôt ne contient pas de suite de tests automatisés. Les vérifications
+principales réalisées sur le projet sont :
 
 ```bash
 node --check js/main.js
@@ -254,65 +353,52 @@ node --check js/catalogue.js
 git diff --check
 ```
 
-À vérifier aussi manuellement :
+Les tests manuels à effectuer avant une publication couvrent :
 
-- la page d'accueil sur ordinateur et sur une largeur d'environ 390 px ;
+- le rendu sur ordinateur et sur une largeur mobile d'environ 390 px ;
 - la recherche avec accents, fautes et traductions ;
-- les filtres boutique ;
-- les liens Vinted et Instagram ;
-- l'ouverture d'une fiche produit ;
-- le zoom des images Tao ;
-- l'affichage progressif des peluches adoptées ;
+- les filtres du catalogue ;
+- l'ouverture et la fermeture des fiches ;
+- le changement de vignette et le zoom des images ;
+- l'affichage progressif des créations adoptées ;
 - l'absence de débordement horizontal ;
-- la console du navigateur.
+- les liens Instagram et Vinted ;
+- les erreurs éventuelles dans la console du navigateur.
 
 ## Déploiement
 
-Le projet peut être publié sur GitHub Pages, Netlify, Vercel ou tout autre
-hébergeur statique.
+Le site est déployé sur **Netlify** depuis le dépôt GitHub. Le domaine public
+personnalisé est configuré avec le fichier [`CNAME`](./CNAME).
 
-### GitHub Pages
+**Site en production :**
+[latelier-tout-doux.com](https://latelier-tout-doux.com/)
 
-1. pousser les changements sur la branche publiée ;
-2. ouvrir **Settings → Pages** dans le dépôt ;
-3. choisir **Deploy from a branch** ;
-4. sélectionner la branche et le dossier `/ (root)` ;
-5. enregistrer ;
-6. vérifier que le domaine indiqué par [`CNAME`](./CNAME) pointe vers le site.
+Le code source est disponible sur
+[github.com/Teferi268/site-peluche](https://github.com/Teferi268/site-peluche).
 
-Le site public actuel est :
+## Ce que ce projet démontre
 
-**[latelier-tout-doux.com](https://latelier-tout-doux.com)**
+Ce projet illustre ma capacité à :
 
-## Accessibilité et attention portée aux détails
+- transformer un besoin réel en produit web fonctionnel ;
+- choisir une solution technique proportionnée au besoin ;
+- organiser des données et séparer contenu, présentation et logique ;
+- développer des interactions en JavaScript sans dépendance inutile ;
+- concevoir une interface responsive et accessible ;
+- diagnostiquer des problèmes de chemins et de formats d'images ;
+- optimiser les ressources pour améliorer le chargement ;
+- documenter un projet pour faciliter sa reprise ;
+- tester manuellement une interface avant sa mise en production.
 
-Le projet inclut notamment :
-
-- un lien d'évitement vers le contenu ;
-- une navigation clavier ;
-- des labels et attributs ARIA ;
-- des textes alternatifs ;
-- des boutons sémantiques ;
-- la fermeture des modales ;
-- le respect de la réduction des animations ;
-- une interface sans défilement horizontal sur mobile.
-
-## Intention du projet
-
-Le site doit rester :
-
-> doux, clair, chaleureux et personnel — comme une peluche faite main.
-
-L'objectif n'est pas seulement de montrer des produits, mais de raconter le
-soin apporté à chaque création et de donner envie d'imaginer une peluche
-unique.
+Il s'inscrit dans mon parcours de **Bachelor informatique à Sup de Vinci** et
+dans mon objectif de poursuivre vers le développement logiciel et le DevOps.
 
 ---
 
 <div align="center">
 
-Fait main, point par point, avec beaucoup d'amour.
+Projet développé par **Mathieu Morin** pour **Marylou — L'Atelier Tout Doux**.
 
-**L'Atelier Tout Doux · Marylou**
+<a href="https://github.com/Teferi268">GitHub · Teferi268</a>
 
 </div>
