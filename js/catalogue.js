@@ -34,9 +34,9 @@ window.AtelierCatalogue = (function () {
       delai: "",
       vintedUrl: "https://www.vinted.fr/items/9313181360-vachette-crochet",
       photos: [
-        "images/vachette-1.jpg",
-        "images/vachette-2.jpg",
-        "images/vachette-3.jpg"
+        "images/vachette-1.webp",
+        "images/vachette-2.webp",
+        "images/vachette-3.webp"
       ]
     },
 
@@ -55,9 +55,9 @@ window.AtelierCatalogue = (function () {
       credit: "loveloopsgb",
       vintedUrl: "",
       photos: [
-        "images/chocolat-1.jpg",
-        "images/chocolat-2.jpg",
-        "images/chocolat-3.jpg"
+        "images/chocolat-1.webp",
+        "images/chocolat-2.webp",
+        "images/chocolat-3.webp"
       ]
     },
 
@@ -76,9 +76,9 @@ window.AtelierCatalogue = (function () {
       credit: "loveloopsgb",
       vintedUrl: "",
       photos: [
-        "images/bordeaux-1.jpg",
-        "images/bordeaux-2.jpg",
-        "images/bordeaux-3.jpg"
+        "images/bordeaux-1.webp",
+        "images/bordeaux-2.webp",
+        "images/bordeaux-3.webp"
       ]
     },
 
@@ -97,9 +97,9 @@ window.AtelierCatalogue = (function () {
       credit: "loveloopsgb",
       vintedUrl: "",
       photos: [
-        "images/lapin rose 1.jpg",
-        "images/lapin rose 2.jpg",
-        "images/lapin rose 3.jpg"
+        "images/lapin rose 1.webp",
+        "images/lapin rose 2.webp",
+        "images/lapin rose 3.webp"
       ]
     },
 
@@ -118,9 +118,9 @@ window.AtelierCatalogue = (function () {
       credit: "loveloopsgb",
       vintedUrl: "",
       photos: [
-        "images/lapin-barbe-a-papa-1.jpg",
-        "images/lapin-barbe-a-papa-2.jpg",
-        "images/lapin-barbe-a-papa-3.jpg"
+        "images/lapin-barbe-a-papa-1.webp",
+        "images/lapin-barbe-a-papa-2.webp",
+        "images/lapin-barbe-a-papa-3.webp"
       ]
     },
 
@@ -138,9 +138,9 @@ window.AtelierCatalogue = (function () {
       delai: "",
       vintedUrl: "",
       photos: [
-        "images/girafe-1.jpg",
-        "images/girafe-2.jpg",
-        "images/girafe-3.jpg"
+        "images/girafe-1.webp",
+        "images/girafe-2.webp",
+        "images/girafe-3.webp"
       ]
     },
 
@@ -159,10 +159,10 @@ window.AtelierCatalogue = (function () {
       credit: "loveloopsgb",
       vintedUrl: "https://www.vinted.com/items/9794513335-lapin-peluche-au-crochet-fait-main-rose-violet",
       photos: [
-        "photo/lapin_lavande_1.jpg",
-        "photo/lapin_lavande_2.jpg",
-        "photo/lapin_lavande_3.jpg",
-        "photo/lapin_lavande_4.jpg"
+        "photo/lapin_lavande_1.webp",
+        "photo/lapin_lavande_2.webp",
+        "photo/lapin_lavande_3.webp",
+        "photo/lapin_lavande_4.webp"
       ]
     },
 
@@ -181,11 +181,11 @@ window.AtelierCatalogue = (function () {
       credit: "quantum_crochet",
       vintedUrl: "",
       photos: [
-        "photo/bee1.jpg",
-        "photo/bee2.jpg",
-        "photo/bee3.jpg",
-        "photo/bee4.jpg",
-        "photo/bee5.jpg"
+        "photo/bee1.webp",
+        "photo/bee2.webp",
+        "photo/bee3.webp",
+        "photo/bee4.webp",
+        "photo/bee5.webp"
       ]
     },
 
@@ -204,12 +204,12 @@ window.AtelierCatalogue = (function () {
       credit: "loveloopsgb",
       vintedUrl: "",
       photos: [
-        "photo/chat_tao1.jpg",
-        "photo/chat_tao2.jpg",
-        "photo/chat_tao3.jpg",
-        "photo/chat_tao4.jpg",
-        "photo/chat_tao5.jpg",
-        "photo/chat_tao6.jpg"
+        "photo/chat_tao1.webp",
+        "photo/chat_tao2.webp",
+        "photo/chat_tao3.webp",
+        "photo/chat_tao4.webp",
+        "photo/chat_tao5.webp",
+        "photo/chat_tao6.webp"
       ]
     },
 
@@ -228,12 +228,12 @@ window.AtelierCatalogue = (function () {
       credit: "loveloopsgb",
       vintedUrl: "",
       photos: [
-        "photo/colddog1.jpg",
-        "photo/colddog2.jpg",
-        "photo/colddog3.jpg",
-        "photo/colddog4.jpg",
-        "photo/colddog5.jpg",
-        "photo/colddog6.jpg"
+        "photo/colddog1.webp",
+        "photo/colddog2.webp",
+        "photo/colddog3.webp",
+        "photo/colddog4.webp",
+        "photo/colddog5.webp",
+        "photo/colddog6.webp"
       ]
     },
 
@@ -252,10 +252,10 @@ window.AtelierCatalogue = (function () {
       credit: "loveloopsgb",
       vintedUrl: "https://www.vinted.com/items/10245246203-panda-au-crochet-fait-main-3",
       photos: [
-        "photo/panda1.jpg",
-        "photo/panda2.jpg",
-        "photo/panda3.jpg",
-        "photo/panda4.jpg"
+        "photo/panda1.webp",
+        "photo/panda2.webp",
+        "photo/panda3.webp",
+        "photo/panda4.webp"
       ]
     },
 
@@ -274,11 +274,11 @@ window.AtelierCatalogue = (function () {
       credit: "loveloopsgb",
       vintedUrl: "",
       photos: [
-        "photo/pandaroux1.jpg",
-        "photo/pandaroux2.jpg",
-        "photo/pandaroux3.jpg",
-        "photo/pandaroux4.jpg",
-        "photo/pandaroux5.jpg"
+        "photo/pandaroux1.webp",
+        "photo/pandaroux2.webp",
+        "photo/pandaroux3.webp",
+        "photo/pandaroux4.webp",
+        "photo/pandaroux5.webp"
       ]
     },
 
@@ -297,11 +297,11 @@ window.AtelierCatalogue = (function () {
       credit: "loveloopsgb",
       vintedUrl: "",
       photos: [
-        "photo/whitelapin1.jpg",
-        "photo/whitelapin2.jpg",
-        "photo/whitelapin3.jpg",
-        "photo/whitelapin4.jpg",
-        "photo/whitelapin5.jpg"
+        "photo/whitelapin1.webp",
+        "photo/whitelapin2.webp",
+        "photo/whitelapin3.webp",
+        "photo/whitelapin4.webp",
+        "photo/whitelapin5.webp"
       ]
     },
 
@@ -320,11 +320,11 @@ window.AtelierCatalogue = (function () {
       credit: "looveloopsgb",
       vintedUrl: "",
       photos: [
-        "photo/pingouin1.jpg",
-        "photo/pingouin2.jpg",
-        "photo/pingouin3.jpg",
-        "photo/pingouin4.jpg",
-        "photo/pingouin5.jpg"
+        "photo/pingouin1.webp",
+        "photo/pingouin2.webp",
+        "photo/pingouin3.webp",
+        "photo/pingouin4.webp",
+        "photo/pingouin5.webp"
       ]
     }
 

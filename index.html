@@ -21,11 +21,11 @@
   <meta property="og:site_name" content="L'Atelier Tout Doux">
   <meta property="og:title" content="L'Atelier Tout Doux · Des peluches faites main à adopter">
   <meta property="og:description" content="Des peluches en crochet faites main par Marylou, à adopter ou à commander sur mesure. Douceur garantie.">
-  <meta property="og:image" content="images/vachette-1.jpg">
+  <meta property="og:image" content="images/vachette-1.webp">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="L'Atelier Tout Doux · Des peluches faites main à adopter">
   <meta name="twitter:description" content="Des peluches en crochet faites main par Marylou, à adopter ou à commander sur mesure.">
-  <meta name="twitter:image" content="images/vachette-1.jpg">
+  <meta name="twitter:image" content="images/vachette-1.webp">
 
   <!-- Polices : Caveat (titres manuscrits) + Nunito (texte courant) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,6 +104,16 @@
           dans mon atelier. Il n'en existe pas deux identiques.</p>
         </header>
 
+        <div class="recherche">
+          <label for="recherche-peluches">Rechercher une peluche</label>
+          <input
+            type="search"
+            id="recherche-peluches"
+            placeholder="Ex. lapin, bunny, pingouin..."
+            autocomplete="off"
+            spellcheck="false">
+        </div>
+
         <div class="filtres" role="group" aria-label="Filtrer les peluches">
           <button type="button" class="filtre actif" data-filtre="tous" aria-pressed="true">Tous</button>
           <button type="button" class="filtre" data-filtre="disponible" aria-pressed="false">Disponible</button>
@@ -146,6 +156,9 @@
         <ul class="grille" id="grille-adoptees">
           <!-- Cartes générées par js/main.js -->
         </ul>
+        <button type="button" class="adoptees-toggle adoptees-toggle-bas" aria-controls="grille-adoptees">
+          Voir d'autres peluches adoptées
+        </button>
       </div>
     </section>
 
@@ -173,6 +186,43 @@
           </p>
         </div>
 
+        <div class="commande-etapes">
+          <header class="section-tete reveal">
+            <h3>Comment ça marche ?</h3>
+            <div class="fil" aria-hidden="true"></div>
+          </header>
+          <ol class="etapes-commande">
+            <li class="etape-commande reveal">
+              <span class="etape-numero" aria-hidden="true">1</span>
+              <div>
+                <h4>Vous m'envoyez votre idée</h4>
+                <p>Un animal, des couleurs, une taille ou quelques photos : dites-moi ce que vous imaginez.</p>
+              </div>
+            </li>
+            <li class="etape-commande reveal">
+              <span class="etape-numero" aria-hidden="true">2</span>
+              <div>
+                <h4>On échange ensemble</h4>
+                <p>Je vous confirme ce qui est possible et je vous donne une estimation du prix et du délai.</p>
+              </div>
+            </li>
+            <li class="etape-commande reveal">
+              <span class="etape-numero" aria-hidden="true">3</span>
+              <div>
+                <h4>Je crochète votre création</h4>
+                <p>Chaque détail est réalisé à la main, avec soin, pour donner vie à une peluche unique.</p>
+              </div>
+            </li>
+            <li class="etape-commande reveal">
+              <span class="etape-numero" aria-hidden="true">4</span>
+              <div>
+                <h4>Votre peluche est prête</h4>
+                <p>Nous voyons ensemble les modalités de remise ou d'envoi de votre nouvelle compagne.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
         <div class="tao-exemple">
           <div class="tao-introduction reveal">
             <h3>Exemple d'une commande personnalisée</h3>
@@ -189,10 +239,10 @@
                 <h4>Tao, le vrai chat</h4>
               </div>
               <div class="tao-galerie">
-                <img src="photo/tao-vrai-1.jpg" alt="Tao, le vrai chat, allongé sur le sol" loading="lazy">
-                <img src="photo/tao-vrai-2.jpg" alt="Portrait de Tao, le vrai chat" loading="lazy">
-                <img src="photo/tao-vrai-3.jpg" alt="Tao, le vrai chat, face à l'objectif" loading="lazy">
-                <img src="photo/tao-vrai-4.jpg" alt="Tao, le vrai chat, allongé sur le dos" loading="lazy">
+                <img src="photo/tao-vrai-1.webp" alt="Tao, le vrai chat, allongé sur le sol" loading="lazy">
+                <img src="photo/tao-vrai-2.webp" alt="Portrait de Tao, le vrai chat" loading="lazy">
+                <img src="photo/tao-vrai-3.webp" alt="Tao, le vrai chat, face à l'objectif" loading="lazy">
+                <img src="photo/tao-vrai-4.webp" alt="Tao, le vrai chat, allongé sur le dos" loading="lazy">
               </div>
             </div>
 
@@ -202,12 +252,12 @@
                 <h4>La peluche réalisée au crochet</h4>
               </div>
               <div class="tao-galerie">
-                <img src="photo/chat_tao1.jpg" alt="Peluche crochetée représentant Tao" loading="lazy">
-                <img src="photo/chat_tao2.jpg" alt="Détail de la peluche de Tao" loading="lazy">
-                <img src="photo/chat_tao3.jpg" alt="Peluche de Tao vue de face" loading="lazy">
-                <img src="photo/chat_tao4.jpg" alt="Peluche de Tao vue de côté" loading="lazy">
-                <img src="photo/chat_tao5.jpg" alt="Détail de la peluche de Tao" loading="lazy">
-                <img src="photo/chat_tao6.jpg" alt="Peluche de Tao terminée" loading="lazy">
+                <img src="photo/chat_tao1.webp" alt="Peluche crochetée représentant Tao" loading="lazy">
+                <img src="photo/chat_tao2.webp" alt="Détail de la peluche de Tao" loading="lazy">
+                <img src="photo/chat_tao3.webp" alt="Peluche de Tao vue de face" loading="lazy">
+                <img src="photo/chat_tao4.webp" alt="Peluche de Tao vue de côté" loading="lazy">
+                <img src="photo/chat_tao5.webp" alt="Détail de la peluche de Tao" loading="lazy">
+                <img src="photo/chat_tao6.webp" alt="Peluche de Tao terminée" loading="lazy">
               </div>
             </div>
           </div>

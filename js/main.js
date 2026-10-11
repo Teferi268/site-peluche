@@ -11,6 +11,138 @@
   const settings = catalogue.loadSettings();
   const products = catalogue.loadProducts();
   let filtreActif = "tous";
+  let rechercheActive = "";
+
+  const synonymesRecherche = {
+    // Lapin : français, anglais, allemand, italien, espagnol, néerlandais
+    lapin: "lapin",
+    lapine: "lapin",
+    lapinou: "lapin",
+    bunny: "lapin",
+    rabbit: "lapin",
+    hare: "lapin",
+    hase: "lapin",
+    coniglio: "lapin",
+    conejo: "lapin",
+    konijn: "lapin",
+
+    // Pingouin
+    pingouin: "pingouin",
+    penguin: "pingouin",
+    pinguoin: "pingouin",
+    pinguin: "pingouin",
+    pinguino: "pingouin",
+
+    // Abeille
+    abeille: "bee",
+    bee: "bee",
+    biene: "bee",
+    ape: "bee",
+    abeja: "bee",
+    bij: "bee",
+
+    // Chien
+    chien: "dog",
+    dog: "dog",
+    hund: "dog",
+    cane: "dog",
+    perro: "dog",
+    hond: "dog",
+
+    // Chat
+    chat: "chat",
+    cat: "chat",
+    katze: "chat",
+    gatto: "chat",
+    gato: "chat",
+    kat: "chat",
+
+    // Vache
+    vache: "vache",
+    vachette: "vache",
+    cow: "vache",
+    kuh: "vache",
+    mucca: "vache",
+    vaca: "vache",
+    koe: "vache",
+
+    // Girafe
+    girafe: "girafe",
+    giraffe: "girafe",
+    giraffa: "girafe",
+    jirafa: "girafe",
+    giraf: "girafe",
+
+    // Ours et panda
+    ours: "ours",
+    bear: "ours",
+    bar: "ours",
+    orso: "ours",
+    oso: "ours",
+    beer: "ours",
+    panda: "panda",
+
+    // Couleurs
+    pink: "rose",
+    rosa: "rose",
+    roza: "rose",
+    rose: "rose",
+    purple: "lavande",
+    violet: "lavande",
+    lavender: "lavande",
+    lavendel: "lavande",
+    lavanda: "lavande",
+    bordeaux: "bordeaux",
+    burgundy: "bordeaux",
+    weinrot: "bordeaux",
+    vinaccia: "bordeaux",
+    burdeos: "bordeaux",
+    marron: "chocolat",
+    brown: "chocolat",
+    braun: "chocolat",
+    marrone: "chocolat",
+    noir: "noir",
+    black: "noir",
+    schwarz: "noir",
+    nero: "noir",
+    negro: "noir",
+    zwart: "noir",
+    blanc: "blanc",
+    white: "blanc",
+    weiss: "blanc",
+    bianco: "blanc",
+    blanco: "blanc",
+    wit: "blanc",
+    roux: "roux",
+    red: "roux",
+    orange: "roux",
+    rot: "roux",
+    rosso: "roux",
+    rojo: "roux",
+    rood: "roux",
+
+    // Taille et caractéristiques
+    petit: "petit",
+    small: "petit",
+    klein: "petit",
+    piccolo: "petit",
+    pequeno: "petit",
+    grand: "grand",
+    large: "grand",
+    big: "grand",
+    gross: "grand",
+    grande: "grand",
+    groot: "grand",
+    doux: "doux",
+    soft: "doux",
+    personnalise: "personnalise",
+    personnalisé: "personnalise",
+    custom: "personnalise",
+    personalisiert: "personnalise",
+    personalizzato: "personnalise",
+    personalizado: "personnalise",
+    gepersonaliseerd: "personnalise"
+  };
 
   const imageSecours = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'%3E%3Crect width='800' height='800' fill='%23F2E9DC'/%3E%3Cpath d='M220 520c45-82 88-123 129-123 24 0 45 11 64 32 34-77 75-116 123-116 68 0 123 68 164 204H220Z' fill='%23E0CFB8'/%3E%3Ccircle cx='315' cy='300' r='48' fill='%23EBDCC3'/%3E%3Ctext x='400' y='620' text-anchor='middle' font-family='Nunito,Arial,sans-serif' font-size='46' fill='%235F4636'%3EPhoto à ajouter%3C/text%3E%3C/svg%3E";
 
@@ -21,6 +153,44 @@
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#039;");
+  }
+
+  function normaliserRecherche(value) {
+    return String(value || "")
+      .toLocaleLowerCase("fr-FR")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, " ")
+      .trim();
+  }
+
+  function motsRecherche(value) {
+    return normaliserRecherche(value)
+      .split(/\s+/)
+      .filter(Boolean)
+      .map(function (mot) {
+        return synonymesRecherche[mot] || mot;
+      });
+  }
+
+  function produitCorrespondRecherche(product) {
+    const mots = motsRecherche(rechercheActive);
+    if (mots.length === 0) return true;
+
+    const contenu = normaliserRecherche([
+      product.id,
+      product.nom,
+      product.description,
+      product.taille,
+      product.dimensions,
+      product.matieres,
+      product.entretien,
+      product.statut
+    ].join(" "));
+
+    return mots.every(function (mot) {
+      return contenu.includes(mot);
+    });
   }
 
   function photosProduit(product) {
@@ -111,7 +281,8 @@
   const grilleAdoptees = document.getElementById("grille-adoptees");
   const messageVide = document.getElementById("boutique-vide");
   const boutonsFiltre = document.querySelectorAll(".filtre");
-  const boutonAdoptees = document.querySelector(".adoptees-toggle");
+  const boutonsAdoptees = document.querySelectorAll(".adoptees-toggle");
+  const champRecherche = document.getElementById("recherche-peluches");
   const nombreAdopteesParEtape = 2;
   let nombreAdopteesAffichees = nombreAdopteesParEtape;
   let listeAdoptees = [];
@@ -121,7 +292,7 @@
 
     filtreActif = filtre;
     let liste = products.filter(function (product) {
-      return product.statut !== "adoptee";
+      return product.statut !== "adoptee" && produitCorrespondRecherche(product);
     });
 
     if (filtre === "disponible") {
@@ -144,7 +315,7 @@
     if (!grilleAdoptees || !section) return;
 
     listeAdoptees = products.filter(function (product) {
-      return product.statut === "adoptee";
+      return product.statut === "adoptee" && produitCorrespondRecherche(product);
     });
 
     const estMobile = window.matchMedia("(max-width: 619px)").matches;
@@ -158,26 +329,28 @@
       .join("");
     section.hidden = listeAdoptees.length === 0;
 
-    if (boutonAdoptees) {
+    if (boutonsAdoptees.length > 0) {
       const reste = listeAdoptees.length - nombreAAfficher;
-      boutonAdoptees.hidden = !estMobile || reste === 0;
-      if (reste > 0) {
-        const nombreSuivant = Math.min(nombreAdopteesParEtape, reste);
-        boutonAdoptees.textContent = reste <= nombreAdopteesParEtape
-          ? "Voir les " + nombreSuivant + " dernières"
-          : "Voir " + nombreSuivant + " autres peluches";
-      }
+      boutonsAdoptees.forEach(function (bouton) {
+        bouton.hidden = !estMobile || reste === 0;
+        if (reste > 0) {
+          const nombreSuivant = Math.min(nombreAdopteesParEtape, reste);
+          bouton.textContent = reste <= nombreAdopteesParEtape
+            ? "Voir les " + nombreSuivant + " dernières"
+            : "Voir " + nombreSuivant + " autres peluches";
+        }
+      });
     }
 
     observerReveals(grilleAdoptees);
   }
 
-  if (boutonAdoptees) {
-    boutonAdoptees.addEventListener("click", function () {
+  boutonsAdoptees.forEach(function (bouton) {
+    bouton.addEventListener("click", function () {
       nombreAdopteesAffichees += nombreAdopteesParEtape;
       afficherAdoptees();
     });
-  }
+  });
 
   boutonsFiltre.forEach(function (bouton) {
     bouton.addEventListener("click", function () {
@@ -190,6 +363,15 @@
       afficherBoutique(bouton.dataset.filtre);
     });
   });
+
+  if (champRecherche) {
+    champRecherche.addEventListener("input", function () {
+      rechercheActive = champRecherche.value;
+      nombreAdopteesAffichees = nombreAdopteesParEtape;
+      afficherBoutique(filtreActif);
+      afficherAdoptees();
+    });
+  }
 
   const modale = document.getElementById("modale");
   const modaleBoite = modale ? modale.querySelector(".modale-boite") : null;
