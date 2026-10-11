@@ -385,6 +385,13 @@ ul { list-style: none; margin: 0; padding: 0; }
   margin: 0.35rem 0 0;
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
 /* ==================================================================
    FILTRES DE LA BOUTIQUE
    ================================================================== */
@@ -594,6 +601,99 @@ ul { list-style: none; margin: 0; padding: 0; }
 .section-adoptees .section-tete {
   border-top: 2px dashed var(--beige-fonce);
   padding-top: 3rem;
+}
+
+/* ==================================================================
+   EXEMPLE DE COMMANDE — comparaison entre les photos originales et la création
+   ================================================================== */
+
+.tao-exemple {
+  max-width: 1080px;
+  margin: 3rem auto 0;
+  padding-top: 3rem;
+  border-top: 2px dashed var(--beige-fonce);
+  position: relative;
+}
+
+.tao-introduction {
+  max-width: 42em;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.tao-introduction h3 {
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  color: var(--terracotta-fonce);
+  margin-bottom: 0.25em;
+}
+
+.tao-introduction p {
+  color: var(--brun-doux);
+}
+
+.tao-comparaison {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.tao-groupe {
+  background-color: var(--blanc-casse);
+  border: 1px solid rgba(224, 207, 184, 0.9);
+  border-radius: 26px;
+  box-shadow: var(--ombre);
+  padding: 1.25rem;
+  overflow: hidden;
+}
+
+.tao-groupe-tete {
+  text-align: center;
+  padding: 0.15rem 0 1rem;
+}
+
+.tao-groupe h4 {
+  font-size: clamp(1.65rem, 3vw, 2rem);
+  color: var(--brun);
+  text-align: center;
+  margin: 0.35rem 0 0;
+}
+
+.tao-etiquette {
+  display: inline-block;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  background-color: var(--beige);
+  color: var(--brun-doux);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tao-etiquette-accent {
+  background-color: var(--kraft);
+  color: var(--terracotta-fonce);
+}
+
+.tao-galerie {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.7rem;
+}
+
+.tao-galerie img {
+  width: 100%;
+  aspect-ratio: 1.08 / 1;
+  object-fit: cover;
+  border-radius: 16px;
+  cursor: zoom-in;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.tao-galerie img:hover,
+.tao-galerie img:focus-visible {
+  transform: scale(1.02);
+  box-shadow: var(--ombre);
 }
 
 /* ==================================================================
@@ -1042,4 +1142,15 @@ ul { list-style: none; margin: 0; padding: 0; }
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
+
+  .tao-comparaison {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+    gap: 1.5rem;
+  }
+
+  .tao-groupe {
+    height: 100%;
+  }
+
 }

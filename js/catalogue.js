@@ -61,20 +61,20 @@ window.AtelierCatalogue = (function () {
       ]
     },
 
-    // --- Lapin Bordeaux (en vente) ---
+    // --- Lapin Bordeaux (déjà adopté) ---
     {
       id: "lapin-bordeaux",
       nom: "Lapin Bordeaux",
       prix: 49,
       taille: "Moyen modèle",
       dimensions: "environ 28 cm",
-      statut: "disponible",
+      statut: "adoptee",
       description: "Lapin crocheté à la main dans une laine chenille duveteuse, d'un profond ton bordeaux. Ses grandes oreilles souples et son museau brodé sont réalisés maille par maille. Modèle moyen d'environ 28 cm.",
       matieres: "Laine chenille 100 % polyester",
       entretien: "Lavage en machine à 40 °C ou à la main. Séchage à l'air libre, à plat.",
       delai: "",
       credit: "loveloopsgb",
-      vintedUrl: "https://www.vinted.fr/items/9313154123-lapin-bordeaux",
+      vintedUrl: "",
       photos: [
         "images/bordeaux-1.jpg",
         "images/bordeaux-2.jpg",
@@ -141,6 +141,190 @@ window.AtelierCatalogue = (function () {
         "images/girafe-1.jpg",
         "images/girafe-2.jpg",
         "images/girafe-3.jpg"
+      ]
+    },
+
+    // --- Lapin lavande (en vente) ---
+    {
+      id: "lapin-lavande",
+      nom: "Lapin lavande",
+      prix: 55,
+      taille: "Moyen modèle",
+      dimensions: "35",
+      statut: "disponible",
+      description: "Lapin crocheté à la main dans une laine chenille très douce, aux jolies nuances lavande. Ses grandes oreilles souples et son museau brodé sont travaillés maille par maille. Modèle moyen d'environ 35 cm.",
+      matieres: "Laine chenille 100 % polyester",
+      entretien: "Lavage en machine à 40 °C ou à la main. Séchage à l'air libre, à plat.",
+      delai: "",
+      credit: "loveloopsgb",
+      vintedUrl: "https://www.vinted.com/items/9794513335-lapin-peluche-au-crochet-fait-main-rose-violet",
+      photos: [
+        "photo/lapin_lavande_1.jpg",
+        "photo/lapin_lavande_2.jpg",
+        "photo/lapin_lavande_3.jpg",
+        "photo/lapin_lavande_4.jpg"
+      ]
+    },
+
+    // --- Fluffy bee, déjà adoptée ---
+    {
+      id: "fluffy-bee",
+      nom: "Fluffy bee",
+      prix: 45,
+      taille: "Moyen modèle",
+      dimensions: "30",
+      statut: "adoptee",
+      description: "Une adorable abeille crochetée à la main dans une laine chenille moelleuse. Ses rayures jaunes et noires, ses petites ailes et son doux visage lui donnent un air particulièrement attachant. Modèle moyen d'environ 30 cm.",
+      matieres: "Laine chenille 100 % polyester",
+      entretien: "Lavage en machine à 40 °C ou à la main. Séchage à l'air libre, à plat.",
+      delai: "",
+      credit: "quantum_crochet",
+      vintedUrl: "",
+      photos: [
+        "photo/bee1.jpg",
+        "photo/bee2.jpg",
+        "photo/bee3.jpg",
+        "photo/bee4.jpg",
+        "photo/bee5.jpg"
+      ]
+    },
+
+    // --- Tao, déjà adopté ---
+    {
+      id: "tao",
+      nom: "Tao",
+      prix: 75,
+      taille: "Grand modèle",
+      dimensions: "40",
+      statut: "adoptee",
+      description: "Commande personnalisée, fidèle à la photo du vrai chat. Tao est crocheté à la main, avec ses détails et son expression soigneusement travaillés pour retrouver toute sa personnalité.",
+      matieres: "Laine chenille 100 % polyester",
+      entretien: "Lavage en machine à 40 °C ou à la main. Séchage à l'air libre, à plat.",
+      delai: "",
+      credit: "loveloopsgb",
+      vintedUrl: "",
+      photos: [
+        "photo/chat_tao1.jpg",
+        "photo/chat_tao2.jpg",
+        "photo/chat_tao3.jpg",
+        "photo/chat_tao4.jpg",
+        "photo/chat_tao5.jpg",
+        "photo/chat_tao6.jpg"
+      ]
+    },
+
+    // --- Cold dog (déjà adopté) ---
+    {
+      id: "cold-dog",
+      nom: "Cold dog",
+      prix: 55,
+      taille: "Moyen modèle",
+      dimensions: "35",
+      statut: "adoptee",
+      description: "Un adorable chien crocheté à la main dans une laine chenille toute douce. Sa silhouette pleine de douceur et ses détails soigneusement travaillés en font un compagnon unique d'environ 35 cm.",
+      matieres: "Laine chenille 100 % polyester",
+      entretien: "Lavage en machine à 40 °C ou à la main. Séchage à l'air libre, à plat.",
+      delai: "",
+      credit: "loveloopsgb",
+      vintedUrl: "",
+      photos: [
+        "photo/colddog1.jpg",
+        "photo/colddog2.jpg",
+        "photo/colddog3.jpg",
+        "photo/colddog4.jpg",
+        "photo/colddog5.jpg",
+        "photo/colddog6.jpg"
+      ]
+    },
+
+    // --- Panda Noir (en vente) ---
+    {
+      id: "panda-noir",
+      nom: "Panda Noir",
+      prix: 40,
+      taille: "Moyen modèle",
+      dimensions: "28",
+      statut: "disponible",
+      description: "Panda crocheté à la main dans une laine chenille très douce, avec son joli pelage noir et blanc. Son visage expressif et ses petites oreilles sont travaillés maille par maille. Modèle moyen d'environ 28 cm.",
+      matieres: "Laine chenille 100 % polyester",
+      entretien: "Lavage en machine à 40 °C ou à la main. Séchage à l'air libre, à plat.",
+      delai: "",
+      credit: "loveloopsgb",
+      vintedUrl: "https://www.vinted.com/items/10245246203-panda-au-crochet-fait-main-3",
+      photos: [
+        "photo/panda1.jpg",
+        "photo/panda2.jpg",
+        "photo/panda3.jpg",
+        "photo/panda4.jpg"
+      ]
+    },
+
+    // --- Panda Roux, déjà adopté ---
+    {
+      id: "panda-roux",
+      nom: "Panda Roux",
+      prix: 50,
+      taille: "Grand modèle",
+      dimensions: "30",
+      statut: "adoptee",
+      description: "Panda roux crocheté à la main dans une laine chenille douce et chaleureuse. Son pelage roux, son petit museau et ses détails délicats sont travaillés maille par maille. Grand modèle d'environ 30 cm.",
+      matieres: "Laine chenille 100 % polyester",
+      entretien: "Lavage en machine à 40 °C ou à la main. Séchage à l'air libre, à plat.",
+      delai: "",
+      credit: "loveloopsgb",
+      vintedUrl: "",
+      photos: [
+        "photo/pandaroux1.jpg",
+        "photo/pandaroux2.jpg",
+        "photo/pandaroux3.jpg",
+        "photo/pandaroux4.jpg",
+        "photo/pandaroux5.jpg"
+      ]
+    },
+
+    // --- Lapin Blanc, déjà adopté ---
+    {
+      id: "lapin-blanc",
+      nom: "Lapin Blanc",
+      prix: 50,
+      taille: "Moyen modèle",
+      dimensions: "30",
+      statut: "adoptee",
+      description: "Lapin blanc crocheté à la main dans une laine chenille moelleuse. Ses longues oreilles, son museau brodé et son doux regard sont réalisés avec soin, maille par maille. Modèle moyen d'environ 30 cm.",
+      matieres: "Laine chenille 100 % polyester",
+      entretien: "Lavage en machine à 40 °C ou à la main. Séchage à l'air libre, à plat.",
+      delai: "",
+      credit: "loveloopsgb",
+      vintedUrl: "",
+      photos: [
+        "photo/whitelapin1.jpg",
+        "photo/whitelapin2.jpg",
+        "photo/whitelapin3.jpg",
+        "photo/whitelapin4.jpg",
+        "photo/whitelapin5.jpg"
+      ]
+    },
+
+    // --- Pingouin, déjà adopté ---
+    {
+      id: "pingouin",
+      nom: "Pingouin",
+      prix: 40,
+      taille: "Moyen modèle",
+      dimensions: "25",
+      statut: "adoptee",
+      description: "Pingouin crocheté à la main dans une laine chenille toute douce. Son ventre clair, ses petites ailes et son adorable silhouette sont travaillés avec soin. Modèle moyen d'environ 25 cm.",
+      matieres: "Laine chenille 100 % polyester",
+      entretien: "Lavage en machine à 40 °C ou à la main. Séchage à l'air libre, à plat.",
+      delai: "",
+      credit: "looveloopsgb",
+      vintedUrl: "",
+      photos: [
+        "photo/pingouin1.jpg",
+        "photo/pingouin2.jpg",
+        "photo/pingouin3.jpg",
+        "photo/pingouin4.jpg",
+        "photo/pingouin5.jpg"
       ]
     }
 

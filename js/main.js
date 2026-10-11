@@ -172,6 +172,12 @@
   const zoomFermer = zoom ? zoom.querySelector(".zoom-fermer") : null;
   let photoAvantZoom = null;
 
+  document.querySelectorAll(".tao-galerie img").forEach(function (image) {
+    image.setAttribute("tabindex", "0");
+    image.setAttribute("role", "button");
+    image.setAttribute("aria-label", image.alt + " — agrandir");
+  });
+
   function ouvrirZoom(src, alt) {
     if (!zoom || !zoomImage) return;
     photoAvantZoom = document.activeElement;
@@ -293,6 +299,12 @@
       return;
     }
 
+    const photoTao = event.target.closest(".tao-galerie img");
+    if (photoTao) {
+      ouvrirZoom(photoTao.src, photoTao.alt);
+      return;
+    }
+
     // Fermeture du zoom : clic n'importe où dessus (fond, image ou croix)
     if (zoom && !zoom.hidden && zoom.contains(event.target)) {
       fermerZoom();
@@ -307,6 +319,13 @@
   }
 
   document.addEventListener("keydown", function (event) {
+    const photoTao = event.target.closest ? event.target.closest(".tao-galerie img") : null;
+    if (photoTao && (event.key === "Enter" || event.key === " ")) {
+      event.preventDefault();
+      ouvrirZoom(photoTao.src, photoTao.alt);
+      return;
+    }
+
     // L'agrandissement photo est au-dessus de la fiche : il capte le clavier en premier.
     if (zoom && !zoom.hidden) {
       if (event.key === "Escape") {
